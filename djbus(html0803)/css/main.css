@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR);
+body, section, p, div, ul, li { 
+  /*body, section 등의 모든 태그의 모든 여백 삭제 */
+  padding: 0;
+  margin: 0;
+}
+ul, li {
+    list-style: none; /*ul태그  앞에 동그라미 삭제*/
+    display: inline-block;
+}
+body {
+    color: #3d3d3d;/*칼라가 가장먼저 정하고 라인 헤이트를 정한다음 나머지는 자유대로 정한다.*/
+    line-height: 1.4;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+a {
+  color: #3d3d3d;
+  text-decoration: none;
+}
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;/*padding을 먼저 쓰고 나중에 margin을 작성해준다.*/
+}
+header { /* header영역은 대부분 높이를 입력해 준다.*/
+    height: 100px;
+}
+header h1 {
+    float: left;
+    margin: 19px 0 0 0;
+}
+header nav {
+    float: right;
+}
+header nav ul li{
+    float: left;
+}
+header nav ul li a {
+    display: block; 
+    /* a가 inline요소라서 padding을 적용하기 위해서*/
+    padding: 36px 15px 0 15px;
+    color: 1D1D1D;
+    font-size: 20px;
+}
+/*display는 안보이는 요소등을 결정하기 때문에 가장 먼저 쓰고
+ 그다음에 padding이 온다. 그리고 컬러, 폰트 사이즈가 온다.*/
+
+.visual {
+    background-image: url(../images/visual_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+.visual strong {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+}
+.visual p {
+  color: #ffffff;
+  line-height: 1.2;
+  font-size: 40px;
+  font-weight: 700;
+}
