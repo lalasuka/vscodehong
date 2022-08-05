@@ -17,14 +17,14 @@ em, address {
     display:block;
 }
 button {
-    background-color: transparent;
+    background-color: transparent; /* 배경 투명 */
     color: inherit;
     line-height: inherit;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     letter-spacing: inherit;
-    cursor: pointer;
+    cursor: pointer; /* 마우스를 오버하면 손바닥모양으로 변경 */
 }
 body {
     color: #3d3d3d;/*칼라가 가장먼저 정하고 라인 헤이트를 정한다음 나머지는 자유대로 정한다.*/
@@ -211,15 +211,49 @@ header nav ul li a {
     font-weight: 700;
 }
 footer {
-    margin: 100px 0 0 0;
-    background-color: #392C2C;
+    overflow: hidden; /* footer하단에 생성된 의도하지 않은 여백 삭제를 위해 */
+    margin: 80px 0 0 0;
+    background-color: #0A0A0A;
     color: rgba(255,255,255,0.8);
 }
 footer .inner {
     float: left;
-    margin: 77px 0 118px 0;
+    margin: 54px 0 64px 0;
+}
+footer .fnav li {
+    float: left;
+}
+footer .fnav li a {
+    display: block;
+    padding: 0 14px;
+}
+footer .fnav li.privacy a {
+    /* li중에서 privacy라는 클래스명을 갖은 li의 내부에 있는 a */
+    padding-left: 0;
+    font-weight: 700;
+}
+footer .info {
+    margin: 19px 0 5px 0;
+}
+footer .info address {
+    display: inline;
+}
+footer .info span {
+    margin: 0 0 0 24px;
 }
 footer button {
+    /* button태그에 넓이와 높이를 주면 글자가 좌우에 가운데 위아래 가운데 정렬됨 */
     float: right;
-    width: 1px solid rgba(255,255,255,0.8);
+    width: 160px;
+    height: 37px;
+    padding: 0 12px 0 14px;
+    margin: 65px 0 0 0;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+footer button strong {
+    float: left;
+    font-weight: 400;
+}
+footer button span {
+    float: right;
 }
