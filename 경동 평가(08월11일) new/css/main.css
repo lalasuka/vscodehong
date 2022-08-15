@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+KR);
+/* main.css에 default.css 삽입 - 호출 */
+@import url(default.css);
+
+.business {
+  margin: 0 0 80px 0;
+}
+.business h1 {
+  margin: 80px 0 0 0;
+}
+.business ul li {
+  margin: 20px 40px 0 0;
+  float: left;
+  width: 290px;
+}
+.business ul li:last-child {
+  margin-right: 0;
+}
+.business ul li a h2 {
+  margin: 10px 0 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+}
+
+.innovation {
+  background-color: #F4F4F4;
+  height: 762px;
+}
+.innovation h1 {
+  padding: 80px 0 20px 0;
+}
+.innovation ul li {
+  float: left;
+  text-align: center;
+}
+.innovation ul li a {
+  color: #FFFFFF;
+}
+.innovation ul li.new {
+  padding: 196px 0 0 0;
+  margin: 0 40px 0 0;
+  background-image: url(../images/innovation01.png);
+  width: 620px;
+  height: 514px;
+}
+.innovation ul li.safe {
+  padding: 196px 0 0 0;
+  background-image: url(../images/innovation02.png);
+  width: 620px;
+  height: 514px;
+}
+.innovation ul li a h2 {
+  font-size: 35px;
+  font-weight: 700;
+}
+.innovation ul li a p {
+  padding: 8px 0 0 0;
+}
