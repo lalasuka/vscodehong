@@ -35,20 +35,21 @@
   text-align: center;
 }
 .innovation ul li a {
+  display: block;
+  width: 620px;
+  height: 514px;
+  padding: 196px 0 0 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; 
   color: #FFFFFF;
 }
 .innovation ul li.new {
-  padding: 196px 0 0 0;
-  margin: 0 40px 0 0;
   background-image: url(../images/innovation01.png);
-  width: 620px;
-  height: 514px;
+  margin-right: 40px;
 }
 .innovation ul li.safe {
-  padding: 196px 0 0 0;
   background-image: url(../images/innovation02.png);
-  width: 620px;
-  height: 514px;
 }
 .innovation ul li a h2 {
   font-size: 35px;
