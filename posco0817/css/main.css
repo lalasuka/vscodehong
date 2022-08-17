@@ -125,6 +125,7 @@
 @media screen and (max-width:640px) {
   .news {
     margin: 0 0 20px 0;
+    padding-bottom: 10px;
   }
   .news h2 {
     margin: 40px 0 0 0;
