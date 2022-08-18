@@ -29,7 +29,7 @@ html, body {
     /* 브라우저에 가로스크롤이 생성되었을때 배경이 짤리지 않기 위해
         최소 넓이를 줌 */
     color: #3D3D3D;
-    line-height: 1.2;
+    line-height: 1.5;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
     font-weight: 400;
