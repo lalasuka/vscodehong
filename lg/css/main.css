@@ -57,6 +57,18 @@ header .tnb button i {
 header .tnb span {
   display: none;
 }
+
+header.fixed { /* header가 고정됐을때 jquery가 class를 추가 */
+  position: fixed;
+  background-color: #fff;
+}
+header.fixed .gnb ul li a {
+  color: #1d1d1d;
+}
+header.fixed .tnb button i {
+  color: #1d1d1d;
+}
+
 @media screen and (max-width:640px) {
   header {
     height: 45px;
@@ -88,6 +100,9 @@ header .tnb span {
   }
   header .tnb {
     display: none;
+  }
+  header.fixed .gnb button i {
+    color: #1d1d1d;
   }
 } /* media 종료 */
 
@@ -333,3 +348,62 @@ header .tnb span {
   padding: 170px 0 40px 0;
   font-size: 40px;
 }
+.purpose h2 strong {
+  position: relative;
+}
+.purpose h2 strong::before {
+  left: -124px;
+  top: 10px;
+  background-image: url(../images/prop_quot_left.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: "";
+}
+.purpose h2 strong::after {
+  right: -80px;
+  bottom: 25px;
+  background-image: url(../images/prop_quot_right.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: "";
+}
+.purpose h2 strong::before, .purpose h2 strong::after {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+@media screen and (max-width:640px) {
+    .purpose {
+      height: auto;
+      margin: 80px 0;
+    }
+    .purpose::before {
+      background-color: rgba(0,0,0,0.3);
+    }
+    .purpose h2 {
+      padding: 113px 0 30px 0;
+      font-size: 20px;
+    }
+    .purpose h2 strong {
+      position: relative;
+    }
+    .purpose h2 strong::before {
+      left: -37px;
+      top: -43px;
+      background-size: 20px auto;
+    }
+    .purpose h2 strong::after {
+      right: 37px;
+      bottom: -47px;
+      background-size: 20px auto;
+    }
+    .purpose h2 span {
+      display: block;
+    }
+    .purpose p {
+      padding: 0 0 75px 0;
+    }
+}/* media 종료 */
