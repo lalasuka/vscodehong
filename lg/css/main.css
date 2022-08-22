@@ -26,6 +26,15 @@ header h1 {
   margin: 33px 285px 0 0;
   font-size: 0;
   line-height: 0;
+ /* 로고가 글자없이 이미지만 존재함
+    그래도 글자크기와 행간때문에 여백이 발행함
+    이 여백을 없애고 img가 존재하는 만큼만 적용 */
+}
+header h1 a {
+  display: block;
+  width: 75.33px;
+  height: 33px;
+  background: url(../images/LG_logo_white.svg) no-repeat center center / 100%;
 }
 header .gnb {
   float: left;
@@ -62,6 +71,9 @@ header.fixed { /* header가 고정됐을때 jquery가 class를 추가 */
   position: fixed;
   background-color: #fff;
 }
+header.fixed h1 a {
+  background: url(../images/LG_logo.svg) no-repeat center center / 100%;
+}
 header.fixed .gnb ul li a {
   color: #1d1d1d;
 }
@@ -75,10 +87,12 @@ header.fixed .tnb button i {
   }
   header h1 {
     margin: 15px 0 0 0;
-
   }
-  header h1 a img {
+  header h1 a {
+    display: block;
     width: 36px;
+    height: 16px;
+    background: url(../images/LG_logo_white.svg) no-repeat center center 100%;
   }
   header .gnb {
     float: right;
@@ -100,7 +114,7 @@ header.fixed .tnb button i {
   }
   header .tnb {
     display: none;
-  }
+  } 
   header.fixed .gnb button i {
     color: #1d1d1d;
   }
@@ -407,3 +421,75 @@ header.fixed .tnb button i {
       padding: 0 0 75px 0;
     }
 }/* media 종료 */
+
+.news {
+  margin: 0 0 160px 0;
+}
+.news h2 {
+  display: none; 
+  /* 웹표준 상 section은 반드시 heading태그를 포함해야
+    하기 때문에 h2를 주고 숨김처리함 */
+}
+.news ul li {
+  float: left;
+  width: 290px;
+  margin: 0 40px 0 0;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+.news ul li:last-child {
+  margin-right: 0;
+}
+.news ul li a {
+  display: block;
+}
+.news ul li a img {
+  width: 100%;
+}
+.news ul li a .cate {
+  display: block;
+  margin : 20px 0 10px 50px;
+  font-weight: 700;
+}
+.news ul li a .tit {
+  display: block;
+  margin : 0 50px;
+  font-weight: 400;
+  /* 2줄 고정 */
+  line-height: 1.2;
+  height: 2.4em; /* 행간*줄수 - 단위 em */
+  overflow: hidden;
+  /* 행간이 1.2배이고 높이는 그것의 2배이므로 2.4배 이다. 그리고 오버플로우 히든을
+    주어서 그 뒤에 글을 전부 잘랐다. */
+}
+.news ul li a .date {
+  display: block;
+  margin : 10px 0 20px 50px;
+}
+@media screen and (max-width:640px) {
+  .news {
+    margin: 0 0 80px 0;
+  }
+  .news ul li {
+    display: none;
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+  .news ul li:first-child {
+    display: block;
+    /* 한개의 li만 나오도록 하기 위해서 모든 li를 숨기고
+      첫번째 li만 남도록 함 */
+  }
+  .news ul li a .cate {
+    font-size: 14px;
+  }
+  .news ul li a .tit {
+    height: auto; /* 2줄고정 해제 */
+    overflow: visible;
+  }
+  .news ul li a .date {
+    margin: 0;
+    padding : 10px 0 20px 50px;
+  }
+}
