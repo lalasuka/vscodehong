@@ -1,11 +1,17 @@
 @import url(../css/default.css);
 
 header { /* header영역은 대부분 높이를 입력해 준다.*/
+    left: 0;
+    top: 0;
     height: 100px;
 }
 header h1 {
     float: left;
     margin: 19px 0 0 0;
+}
+header h1 a {
+    
+    background: url(../images/logo.png);
 }
 header nav {
     float: right;
