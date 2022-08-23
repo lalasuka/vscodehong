@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'EY'; /* font이름 짓는 것을 내 마음대로 가능 */
+	font-style: normal;
+	font-weight: 400;
+	/* src: local('Noto Sans KR Thin'), local('NotoSansKR-Thin'), url(font/NotoSans-Thin.eot);
+   만약에 컴퓨터에 깔려있으면 그걸 먼저써라 */
+	src: url(../font/Eulyoo1945-Regular.eot) format('embedded-opentype'),
+	     url(../font/Eulyoo1945-Regular.woff2) format('woff2'),
+	     url(../font/Eulyoo1945-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'EY'; /* font이름 짓는 것을 내 마음대로 가능 */
+	font-style: normal;
+	font-weight: 700;
+	/* src: local('Noto Sans KR Thin'), local('NotoSansKR-Thin'), url(font/NotoSans-Thin.eot);
+   만약에 컴퓨터에 깔려있으면 그걸 먼저써라 */
+	src: url(../font/Eulyoo1945-SemiBold.eot?#iefix) format('embedded-opentype'),
+	     url(../font/Eulyoo1945-SemiBold.woff2) format('woff2'),
+	     url(../font/Eulyoo1945-SemiBold.woff) format('woff');
+}
