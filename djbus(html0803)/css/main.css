@@ -1,48 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR);
-body, section, p, div, ul, li, h1, h2, h3, h4, h5, h6 { 
-  /*body, section 등의 모든 태그의 모든 여백 삭제 */
-  padding: 0;
-  margin: 0;
-}
-ul, li {
-    list-style: none; /*ul태그  앞에 동그라미 삭제*/
-}
-em, address {
-    font-style: normal;
-    /*em태그가 기본적으로 글자가 기울어져있음, 이를 해결하기 위해서 font-style을 nomal로 해서 원상태로 바꾼다.*/
-}
-.clearfix:after{
-    display:block;clear:both;content:".";visibility:hidden;height:0;}
-.clearfix{
-    display:block;
-}
-button {
-    background-color: transparent; /* 배경 투명 */
-    color: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    letter-spacing: inherit;
-    cursor: pointer; /* 마우스를 오버하면 손바닥모양으로 변경 */
-}
-body {
-    color: #3d3d3d;/*칼라가 가장먼저 정하고 라인 헤이트를 정한다음 나머지는 자유대로 정한다.*/
-    line-height: 1.4;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: -0.05em;
-}
-a {
-  color: inherit; /*inherit은 상속이라는 뜻이다.*/
-  /* 브라우저가 정의하는 파란색은 적용하지 않고, 부모요소가 정의한 색상을 따르겠다는 뜻*/
-  text-decoration: none;
-}
-.wrapper {
-    width: 1280px;
-    margin: 0 auto;/*padding을 먼저 쓰고 나중에 margin을 작성해준다.*/
-}
+@import url(../css/default.css);
+
 header { /* header영역은 대부분 높이를 입력해 준다.*/
     height: 100px;
 }
@@ -63,8 +20,31 @@ header nav ul li a {
     color: 1D1D1D;
     font-size: 20px;
 }
+header button {
+    display: none;
+}
 /*display는 안보이는 요소등을 결정하기 때문에 가장 먼저 쓰고
  그다음에 padding이 온다. 그리고 컬러, 폰트 사이즈가 온다.*/
+
+@media screen and (max-width:640px) {
+    header { /* header영역은 대부분 높이를 입력해 준다.*/
+        height: 45px;
+    }
+    header h1 {
+        margin: 15px 0 0 0;
+    }
+    header nav {
+        display: none;
+    }
+    header nav ul li{
+        float: none;
+    }
+    header button {
+        display: block;
+        float: right;
+        font-size: 0;
+    }
+}
 
 .visual {
     background-image: url(../images/visual_bg.png);
