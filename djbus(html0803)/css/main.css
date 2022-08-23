@@ -10,8 +10,12 @@ header h1 {
     margin: 19px 0 0 0;
 }
 header h1 a {
-    
-    background: url(../images/logo.png);
+    display: block;
+    width: 179px;
+    height: 52px;
+    background: url(../images/logo.png) no-repeat center center / 100%;
+    font-size: 0;
+    line-height: 0;
 }
 header nav {
     float: right;
