@@ -13,7 +13,7 @@ header h1 a {
     display: block;
     width: 179px;
     height: 52px;
-    background: url(../images/logo.png) no-repeat center center / 100%;
+    background: url(../images/logo.svg) no-repeat center center / cover;
     font-size: 0;
     line-height: 0;
 }
@@ -43,6 +43,11 @@ header button {
     header h1 {
         margin: 15px 0 0 0;
     }
+    header h1 a {
+        display: block;
+        width: 52px;
+        height: 15px;
+    }
     header nav {
         display: none;
     }
@@ -52,6 +57,7 @@ header button {
     header button {
         display: block;
         float: right;
+        margin: 10px 0 0 0;
         font-size: 0;
     }
 }
@@ -77,6 +83,23 @@ header button {
 }
 .visual em {
     font-weight: 700;
+}
+@media screen and (max-width:640px) {
+    .visual {
+        height: auto;
+    }
+    .visual strong /*장남이라서 margin을 주면 visual영역 밖에도 영향을 끼쳐서 같이 있는 배경들을 밀어낸다.*/ {
+        padding: 318px 0 5px 0;
+        font-size: 15px;
+    }
+    .visual p {
+      padding: 0 0 50px 0;
+      line-height: 1.5;
+      font-size: 20px;
+    }
+    .visual em {
+        font-weight: 700;
+    }
 }
 
 .promotion .art {
@@ -112,7 +135,7 @@ header button {
     display: block;
     margin: 0 0 10px 0;
     font-size: 20px;
-    font-weight: 1.5;
+    font-weight: 700;
 }
 .promotion a {
     display: inline-block;
@@ -121,11 +144,52 @@ header button {
     margin: 0 10px 0 0;
     border: 1px solid #666;
 }
+@media screen and (max-width:640px) {
+    .promotion .art {
+        margin: 80px 0 40px 0;
+    }
+    .promotion .art img {
+        float: none;
+        height: auto;
+        width: 100%;
+    }
+    .promotion .art .inner {
+        float: left;
+        margin: 20px 0 0 0;
+    }
+    /*두 요소에 float:right를 주면 코딩순서와 역순으로 요소들이 오른쪽에 정렬한다.*/
+    .promotion .lee {
+        margin: 0 0 80px 0;
+    }
+    .promotion .lee img {
+        float: none;
+        height: auto;
+        width: 100%;
+    }
+    .promotion .lee .inner {
+        float: none;
+        margin: 20px 0 0 0;
+    }
+    .promotion h2 {
+        font-size: 20px;
+    }
+    .promotion p {
+        margin: 10px 0 20px 0;
+    }
+    .promotion p strong {
+        font-size: 15px;
+    }
+    .promotion a {
+        float: left;
+        padding: 7px 16px;
+        height: 34px;
+    }
+}
+
 .bbs {
     background-image: url(../images/bbs_bg.png);
     background-position: center top;
     background-repeat: no-repeat;
-    
 }
 .bbs .notice {
     /*notice 글자는 대부분 흰색 . 내부요소에 스타일을*/
@@ -134,15 +198,6 @@ header button {
 .bbs .notice .tit {
     float: left;
     margin: 60px 0 0 0;
-}
-.bbs .notice .tit h2 {
-    font-size: 50px;
-    font-weight: 700;
-}
-.bbs .notice .tit a {
-    display: inline-block;
-    padding: 7px 9px;
-    border: 1px solid #666;
 }
 .bbs .notice .tit p {
     padding: 10px 0 20px 0;
@@ -166,7 +221,7 @@ header button {
     font-size: 15;
     font-weight: 400;    
 }
-.bbs .notice ul li a span {
+.bbs .notice ul li a .date {
     float: right;
     color: rgba(255, 255, 255, 0.7);
     margin: 5px 0 0 0;
@@ -200,6 +255,96 @@ header button {
     font-size: 20px;
     font-weight: 700;
 }
+.bbs .notice .vm {
+    position: absolute;
+    float: left;
+    margin: 204px 0 0 0;
+}
+.bbs .notice .vm a {
+    padding: 7px 22px;
+    border: 1px solid #666;
+}
+@media screen and (max-width:640px) {
+    .bbs {
+        height: 328px;
+    }
+    .bbs .notice .tit {
+        float: none;
+        padding: 40px 0 20px 0;
+    }
+    .bbs .notice .tit h2 {
+        font-size: 20px;
+    }
+    .bbs .notice .tit p {
+        padding: 10px 0 20px 0;
+    }
+    .bbs .notice ul {
+        float: left;
+        width: 100%;
+        margin: 0 0 30px 0;
+    }
+    .bbs .notice ul li.first {
+        border-top: none;
+    }
+    .bbs .notice ul li a {
+        padding: 0 133px 10px 0;
+    }
+    .bbs .notice ul li a strong {
+        float: left;
+        font-size: 15;
+        font-weight: 400;    
+    }
+    .bbs .notice ul li a .date {
+        float: right;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0 0 0 0;
+    }
+    .bbs .notice ul li a .cut {
+        display: none;
+    }
+    .bbs .tit2 {
+        display: block;
+    }
+    .bbs .movie {
+        margin: 170px 0 0 0;
+    } 
+    
+    .bbs .movie h2 {
+        color: #ffffff;
+        font-size: 50px;
+        font-weight: 700;
+        margin: 0 0 45px 0  ;
+    }
+    .bbs .movie ul li {
+        float: left;
+        width: 400px;
+        margin: 0 40px 0 0;
+    }
+    .bbs .movie ul li.last {
+        margin: 0;
+    }
+    .bbs .movie ul li a {
+        display: block;
+    }
+    .bbs .movie ul li a span {
+        display: block;
+    }
+    .bbs .movie ul li a strong {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .bbs .notice .vm {
+        position: absolute;
+        float: none;
+        padding: 0px 0 0px 0;
+    }
+    .bbs .notice .vm a {
+        padding: 7px 14px;
+        border: 1px solid #666;
+    }
+}
+
 footer {
     overflow: hidden; /* footer하단에 생성된 의도하지 않은 여백 삭제를 위해 */
     margin: 80px 0 0 0;
