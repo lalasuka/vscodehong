@@ -308,8 +308,7 @@ header button {
         margin: 140px 0 20px 0  ;
     }
     .bbs .movie ul li {
-        float: none;
-        width: 100%;
+        width: 1040px;
         margin: 0 40px 0 0;
     }
     .bbs .movie ul li.last {
@@ -317,14 +316,13 @@ header button {
     }
     .bbs .movie ul li a {
         display: block;
+        float: left;
     }
     .bbs .movie ul li a span {
         display: block;
     }
     .bbs .movie ul li a strong {
-        display: block;
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 13px;
     }
 }
 
