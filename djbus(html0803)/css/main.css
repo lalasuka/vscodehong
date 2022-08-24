@@ -202,6 +202,11 @@ header button {
 .bbs .notice .tit p {
     padding: 10px 0 20px 0;
 }
+.bbs .notice .tit a {
+    display: inline-block;
+    padding: 7px 22px;
+    border: 1px solid #666;
+}
 .bbs .notice ul {
     float: right;
     width: 730px;
@@ -255,22 +260,13 @@ header button {
     font-size: 20px;
     font-weight: 700;
 }
-.bbs .notice .vm {
-    position: absolute;
-    float: left;
-    margin: 204px 0 0 0;
-}
-.bbs .notice .vm a {
-    padding: 7px 22px;
-    border: 1px solid #666;
-}
 @media screen and (max-width:640px) {
     .bbs {
         height: 328px;
     }
     .bbs .notice .tit {
         float: none;
-        padding: 40px 0 20px 0;
+        padding: 40px 0 0 0;
     }
     .bbs .notice .tit h2 {
         font-size: 20px;
@@ -278,46 +274,42 @@ header button {
     .bbs .notice .tit p {
         padding: 10px 0 20px 0;
     }
+    .bbs .notice .tit a {
+        position: absolute;
+        padding: 7px 14px;
+        margin: 160px 0 0 0;
+        border: 1px solid #666;
+    }
     .bbs .notice ul {
         float: left;
         width: 100%;
-        margin: 0 0 30px 0;
+        margin: 0;
     }
     .bbs .notice ul li.first {
         border-top: none;
     }
     .bbs .notice ul li a {
-        padding: 0 133px 10px 0;
+        padding: 10px 0 10px 0;
     }
     .bbs .notice ul li a strong {
         float: left;
-        font-size: 15;
-        font-weight: 400;    
-    }
-    .bbs .notice ul li a .date {
-        float: right;
-        color: rgba(255, 255, 255, 0.7);
-        margin: 0 0 0 0;
+        font-size: 13px;    
     }
     .bbs .notice ul li a .cut {
         display: none;
     }
-    .bbs .tit2 {
-        display: block;
-    }
     .bbs .movie {
-        margin: 170px 0 0 0;
+        margin: 80px 0 20px 0;
     } 
-    
     .bbs .movie h2 {
-        color: #ffffff;
-        font-size: 50px;
+        color: #1d1d1d;
+        font-size: 20px;
         font-weight: 700;
-        margin: 0 0 45px 0  ;
+        margin: 140px 0 20px 0  ;
     }
     .bbs .movie ul li {
-        float: left;
-        width: 400px;
+        float: none;
+        width: 100%;
         margin: 0 40px 0 0;
     }
     .bbs .movie ul li.last {
@@ -334,21 +326,12 @@ header button {
         font-size: 20px;
         font-weight: 700;
     }
-    .bbs .notice .vm {
-        position: absolute;
-        float: none;
-        padding: 0px 0 0px 0;
-    }
-    .bbs .notice .vm a {
-        padding: 7px 14px;
-        border: 1px solid #666;
-    }
 }
 
 footer {
     overflow: hidden; /* footer하단에 생성된 의도하지 않은 여백 삭제를 위해 */
     margin: 80px 0 0 0;
-    background-color: #0A0A0A;
+    background-color: #392C2C;
     color: rgba(255,255,255,0.8);
 }
 footer .inner {
