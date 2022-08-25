@@ -22,7 +22,7 @@ $(window).scroll(function(){
   scrolling = $(window).scrollTop()
   // console.log(scrolling)
 
-  if(scrolling > 200){
+  if(scrolling > 0){
     $('header').addClass('fixed')
   }else{
     $('header').removeClass('fixed')
