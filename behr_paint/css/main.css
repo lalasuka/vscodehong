@@ -80,7 +80,7 @@ header nav > ul > li:hover > a span::before {
 }
 header nav > ul > li > ul { /* 2차메뉴 */
   display: none;
-  padding: 30px 0 0 0;
+  padding: 30px 0;
    /*
         1차메뉴와 2차메뉴 사이에는 여백(margin)이 존재하면 안됨
         padding은 내부 여백으로 태그 영역 자체가 늘어나는 것이라 여백 아님

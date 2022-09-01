@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 /* 구글 폰트 => Noto Sans KR로 불러와서 사용함 */
 
-body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, li, address, strong, span, em, p, i {
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, h6, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -21,7 +21,7 @@ em, address {
     font-style: normal;
 }
 /* 항목 앞에 동그라미 삭제 */
-ul, li {
+ul, ol, li {
     list-style: none;
 }
 button {
@@ -50,7 +50,7 @@ html, body {
     /* sans-serif가 없으면 적용 안됌. */
     font-size: 15px;
     font-weight: 400;
-    letter-spacing: -0.05em; /* 무조건 -0.0?em으로 줘야함 안그러면 글자들이 하나로 뭉침 */
+    letter-spacing: -0.0em; /* 무조건 -0.0?em으로 줘야함 안그러면 글자들이 하나로 뭉침 */
     word-break: keep-all;
 }
 /* 콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
