@@ -13,7 +13,7 @@
 </head>
 <body>
   <div id="wrap">
-    <header>
+    <header class="header">
       <div class="wrapper">
         <h1 class="logo"><a href="#n"><img src="images/logo.svg" alt="대전보호센터 로고 Daejeon Metropolitan City" /></a></h1>
         <nav class="gnb">
@@ -192,11 +192,11 @@
           <p>동물보호센터에서 실행하는 유기·유실동물 보호절차에 대해 알려드립니다.</p>
         </div>
         <div class="ctrl">
-          <button>
+          <button class="prev">
             <span>이전 절차 보기</span>
             <i class="material-symbols-rounded">arrow_back</i>
           </button>
-          <button>
+          <button class="next">
             <span>다음 절차 보기</span>
             <i class="material-symbols-rounded">arrow_forward</i>
           </button>
@@ -220,7 +220,7 @@
             </li>
             <li>
               <strong>04</strong>
-              <h3>진료 및 보호실 배정</h3>
+              <h3>진료 및 보호실</h3>
               <p>기본 진료, 전염병 검사 후 보호실 배정</p>
             </li>
             <li>
@@ -238,9 +238,84 @@
       </div>
     </section>
     <section class="news">
-      <div class="wrapper"></div>
+      <div class="wrapper">
+        <div class="inner">
+          <div class="tit clearfix">
+            <h2>센터소식</h2>
+            <p>반려동물로 새 삶을 시작한 동물들의 소식을 들려주세요.</p>
+          </div>
+          <ul class="clearfix">
+            <li>
+              <a href="#n">
+                <span class="pic"><img src="images/news01.png" alt="페럿 사진" /></span>
+                <span class="inner2">
+                  <strong class="subject">한이공주님 50일 시중든 후기</strong>
+                  <span class="content">세상에서 제일 애교 많고 사랑스럽고 귀엽고 깜찍하고 큐티한 우리 한이가 가족이 된지 오늘로 50일이 되었습니다. 야호~ 처음 한이를 만난건 입양일 2주전이었던 것으로 기억해요. 보호된 아이들의 얼굴들을 하나하나 보던 중 교통사고를 당한 한이의 얼굴이 눈에 들어왔고, 그 후로 일주일 동안 매일매일 한이 생각만 났어요....</span>
+                  <span class="date">
+                    <span>2022-07-11</span>
+                    <span>황**</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#n">
+                <strong class="subject">대전동물보호센터 입양 유기견 문제행동교정 훈련 안내</strong>
+                <span class="date">
+                  <span>2022-07-12</span>
+                  <span>신명호</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#n">
+                <strong class="subject">대전광역시 동물보호센터에서 보호중인 동물에 ...</strong>
+                <span class="date">
+                  <span>2018-11-14</span>
+                  <span>류원선</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <div class="more">
+            <a href="#n">
+                <span>더보기</span>
+                <i class="material-symbols-rounded">arrow_circle_right</i>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <div class="wrapper">
+          <div class="inner">
+            <div class="family">
+              <button class="open"> <!-- 메뉴 여는 버튼 -->
+                <span>Family Site</span>
+                <i class="material-symbols-rounded">arrow_forward</i>
+              </button>
+              <ul>
+                <li><a href="https://www.daejeon.go.kr"target="_blank"title="새창">대전광역시청</a></li>
+                <li><a href="https://www.animal.go.kr" target="_blank" title="새창">동물보호관리시스템</a></li>
+              </ul>
+              <button class="close"> <!-- 메뉴 닫는 버튼 -->
+                <span>Family Site</span>
+                <i class="material-symbols-rounded">close</i>
+              </button>
+              <ul>
+            </div>
+            <a href="#n" class="logo"><img src="images/logo_w.svg" alt="대전보호센터 로고" /></a>
+            <ul class="fnav clearfix">
+              <li class="privacy"><a href="#n">개인정보처리방침</a></li>
+              <li><a href="#n">영상정보처리기기 운영·관리방침</a></li>
+              <li><a href="#n">홈페이지 개선의견</a></li>
+              <li><a href="#n">오시는길</a></li>
+            </ul>
+            <div class="finfo">(34001) 대전광역시 유성구 금남구즉로 1234(금고동)   /  대표전화 (042) 825-1118</div>
+            <div class="copyright">COPYRIGHT 2017 (c) DAEJEON METROPOLITAN CITY. ALL RIGHTS RESERVED.</div>
+          </div>
+        </div>
+    </footer>
   </div>
 </body>
 </div>
