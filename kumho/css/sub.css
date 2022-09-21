@@ -168,3 +168,8 @@
       그래서 최소높이를 주고 코딩함.
   */
 }
+.container .sub_tit h2 {
+  color: #1d1d1d;
+  font-size: 40px;
+  font-weight: 700;
+}
