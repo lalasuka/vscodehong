@@ -43,14 +43,19 @@ html, body {
 .clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 
+/* wrapper와 동일한 사이즈를 갖은 position:relative를 요소는
+   cnt_wrap 클래스 줌 */
+   .cnt_wrap {
+    position: relative;
+}
+
 .header {
     position: absolute;
     left: 0;
     top: 0;
     z-index: 100; 
-    /* 
-       z-index가 높은 숫자가 위로 올라옴 
-       header아래 콘텐츠 요소는 z-index가 필요하면
+    /* z-index가 높은 숫자가 위로 올라옴 
+       header아래 콘텐츠 요소는 z-index가 필요하면 
        100이하의 값을 줌 (header가 무조건 위에 있어야함)
     */
     width: 100%;
@@ -115,7 +120,7 @@ html, body {
     line-height: 95px;
 }
 .header .gnb > ul > li:hover > a {
-    color: #ed1c24 !important;
+    color: #ED1C24 !important;
     font-weight: 700;
 }
 .header .gnb > ul > li:hover > a > span {
@@ -136,6 +141,7 @@ html, body {
     left: 0;
     top: 95px;
     width: 100%;
+    height: 255px;
     padding: 14px 0 0 0;
     /* 1차메뉴 a와 2차메뉴 ul 위아래 사이에는 여백이 존재하면 안됨
        메뉴가 out됨
@@ -149,6 +155,7 @@ html, body {
        --> 높이값을 주면 됨.
        */
 }
+
 .header .gnb > ul > li > ul > li > a {
     display: block;
     line-height: 36px;
@@ -165,8 +172,7 @@ html, body {
 }
 .header .lang button {
     display: flex;
-    width: 116px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     /* button 내부 요소 i와 span태그를 좌우 정렬, 위아래 가운데 배치 */
     width: 116px;
@@ -178,7 +184,6 @@ html, body {
     color: rgba(255,255,255,0.6);
     font-size: 18px;
 }
-
 .header .lang .close {
     display: none;
 }
@@ -186,12 +191,12 @@ html, body {
     display: none;
     position: absolute;
     left: 0;
-    top: 37px;
+    top: 36px;
     width: 116px;
     height: 81px;
     border-radius: 18px;
     background-color: rgba(255,255,255,0.8);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     color: #3D3D3D;
     text-align: center;
 }
@@ -202,9 +207,9 @@ html, body {
     display: block;
     line-height: 2;
 }
-.header .lang ul li a:hover,
-.header .lang ul li.a:active a {
-    color: #ed1c24;
+.header .lang ul li a:hover, 
+.header .lang ul li.active a {
+    color: #ED1C24;
     font-weight: 700;
 }
 /* lang가 열렸을때 */
@@ -220,7 +225,7 @@ html, body {
 
 /* 메뉴에 마우스를 오버했을때 */
 .header.menu_open {
-     color: #3D3D3D;
+    color: #3D3D3D;
 }
 .header.menu_open::before {
     position: absolute;
@@ -230,7 +235,7 @@ html, body {
     width: 100%;
     height: 386px;
     background-color: #FFF;
-    box-shadow:0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     content: "";
 }
 .header.menu_open::after {
@@ -240,14 +245,14 @@ html, body {
     z-index: 101;
     width: 100%;
     height: 1px;
-    background-color: rgba(210,210,210,0.5);
+    background-color: #EDEDED;
     content: "";
 }
-.header.menu_open .logo a {
+.header.menu_open .logo a {    
     background-image: url(../images/common/logo.svg);
 }
 .header.menu_open .gnb > ul > li > a {
-    color: #1d1d1d;
+    color: #1D1D1D;
 }
 .header.menu_open .gnb > ul > li > ul {
     display: block; /* 2차메뉴 */
@@ -258,7 +263,7 @@ html, body {
 .header.menu_open .lang button i {
     color: #666;
 }
-@media screen and (max-width:640px) {
+@media screen and (max-width:640px){
     .header {
         height: 45px;
     }
@@ -274,15 +279,18 @@ html, body {
         float: right;
         padding: 11px 20px; /* 버튼을 크기를 키우기 위해서 여백을 padding으로 줌 */
     }
+    .header .gnb .open i {
+        font-size: 22px;
+    }
     .header .gnb .close {
         display: none; /* 모바일에서만 나타남 */
         position: absolute;
         right: 0;
         top: 0;
-        /* 코딩의 순서상 메뉴 뒤에 있지만 오른쪽 상단에 배치하기 위해서 */
+        /* 코딩에 순서상 메뉴 뒤에 있지만 오른쪽 상단에 배치하기 위해서 */
         padding: 11px 20px;
     }
-    .header .gnb .open i {
+    .header .gnb .close i {
         font-size: 22px;
     }
     .header .gnb > ul {
@@ -296,12 +304,14 @@ html, body {
     }
     .header .gnb > ul > li > a {
         display: block;
+        position: relative;
+        color: #1D1D1D;
         line-height: 40px;
     }
     .header .gnb > ul > li > a::after {
         position: absolute;
-        right: 2px;
-        top: 11px;
+        right: 0;
+        top: 9px;
         color: #666;
         font-family: 'Material Symbols Rounded';
         font-weight: normal;
@@ -330,22 +340,30 @@ html, body {
         width: auto;
         height: auto;
         padding: 5px 0 5px 34px;
-        background-color: #f4f4f4;
+        margin: 5px 0;
+        border-top: 1px solid #ededed;
+        border-bottom: 1px solid #ededed;
     }
     .header .gnb > ul > li > ul > li > a {
-        display: block;
         font-size: 15px;
-        line-height: 36px;
     }
-    .header .gnb > ul > li > ul > li > a:hover {
+    /* 서브메뉴가 열렸을때 */
+    .header .gnb > ul > li.sub_open > ul {
+        display: block; 
+    }
+    .header .gnb > ul > li.sub_open > a {
         color: #ED1C24;
         font-weight: 700;
+    }
+    .header .gnb > ul > li.sub_open > a::after {
+        color: #ED1C24;
+        content: "\e5ce";
     }
     .header .lang {
         display: none;
         right: auto;
         left: 111px;
-        top: 17px;  
+        top: 17px;
     }
     .header .lang button {
         display: none;
@@ -362,26 +380,11 @@ html, body {
         box-shadow: none;
         text-align: left;
     }
-    /* 서브메뉴가 열렸을때   */
-    .header .gnb > ul > li.sub_open > ul {
-        display: block;
-    }
-    .header .gnb > ul > li.sub_open > a {
-        color: #ED1C24;
-        font-weight: 700;
-    }
-    .header .gnb > ul > li.sub_open > a::after {
-        color: #eD1C24;
-        content: "\e5ce";
-    }
-    .header .gnb > ul > li > ul > li > a {
-        font-size: 15px;
+    .header .lang ul li:first-child {
+        margin: 0;
     }
     .header .lang ul li {
         float: left;
-    }
-    .header .lang ul li:first-child {
-        margin: 0;
     }
     .header .lang ul li:first-child {
         position: relative;
@@ -389,7 +392,7 @@ html, body {
     }
     .header .lang ul li:first-child::after {
         position: absolute;
-        right: -10px;
+        right: -11px;
         top: 6px;
         width: 1px;
         height: 8px;
@@ -398,11 +401,6 @@ html, body {
     }
     .header .lang ul li a {
         line-height: 1.5;
-    }
-    .header .lang ul li a:hover, 
-    .header .lang ul li.active a {
-        color: #ED1C24;
-        font-weight: 700;
     }
     /* lang가 열렸을때 */
     .header .lang.lang_open ul {
@@ -447,6 +445,7 @@ html, body {
     .header.menu_mobile .gnb .close {
         display: block; 
     }
+    
     .header.menu_mobile .gnb > ul {
         display: block;
     }
@@ -454,4 +453,121 @@ html, body {
         display: block;
     }
 
-} /* header media 종료 */
+}/* header 반응형 종료 */
+
+.footer {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+.footer .family {
+    position: absolute;
+    right: 0;
+    top: 60px;
+}
+.footer .family .inner {
+    position: relative; /* ul의 정렬의 기준 */
+    width: 190px;
+}
+.footer .family button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* button안에 있는 span i를 좌우 끝으로 배치, 
+       위아래 가운데 배치 */
+    width: 100%;
+    height: 40px;
+    padding: 0 7px 0 13px;
+    /* button안에서 좌우 끝으로 배치된 span과 i의 여백 */
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+}
+.footer .family button i {
+    color: rgba(255,255,255,0.6);
+    font-size: 18px;
+}
+.footer .family ul { 
+    /* 넓이를 가지고 있는 inner를 기준으로 정렬 */
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    width: 100%;
+    padding: 16px 0 21px 21px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-bottom-width: 0;
+    border-radius: 5px 5px 0 0;
+    background-color: #121212;
+}
+.footer .family ul li a {
+    line-height: 30px;
+}
+.footer .family ul li a:hover {
+    color: #ED1C24;
+    font-weight: 700;
+}
+.footer .family .btn_close {
+    display: none;
+}
+/* family가 열렸을때의 스타일 
+    1. btn_open 사라짐
+    2. ul이 나타남
+    3. btn_close 나타남
+*/
+.footer .family.open .btn_open {
+    display: none;
+}
+.footer .family.open ul {
+    display: block;
+}
+.footer .family.open .btn_close {
+    display: flex;
+    border-radius: 0 0 5px 5px;
+}
+.footer .fnav {
+    display: flex;
+    padding: 57px 0 0 0;
+}
+.footer .fnav li {
+    margin: 0 21px 0 0;
+}
+.footer .copyright {
+    color: rgba(255,255,255,0.6);
+    padding: 15px 0 64px 0;
+}
+@media screen and (max-width:640px){
+    .footer .family {
+        position: relative;
+        right: auto;
+        top: auto;
+        display: flex;
+        justify-content: center;
+        padding: 49px 0 0 0;
+    }
+    .footer .family .inner {
+        width: 180px;
+    }
+    .footer .family button {
+        height: 35px;
+        padding: 0 6px 0 13px;
+    }
+    .footer .family button i {
+        font-size: 16px;
+    }
+    .footer .family ul { 
+        bottom: 35px;
+        padding: 10px 0 15px 15px;
+    }
+    .footer .family ul li a {
+        line-height: 26px;
+    }
+    .footer .fnav {
+        flex-wrap: wrap;
+        padding: 37px 0 0 0;
+    }
+    .footer .fnav li {
+        margin: 0 19px 0 0;
+    }
+    .footer .copyright {
+        padding: 13px 0 51px 0;
+    }
+} /* footer media 종료 */
