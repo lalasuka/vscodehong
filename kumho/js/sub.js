@@ -25,4 +25,4 @@ $(document).ready(function(){
     $(this).parents('.depth').removeClass('open');
   });
 
-})
+});

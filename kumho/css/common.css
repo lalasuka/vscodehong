@@ -45,7 +45,7 @@ html, body {
 
 /* wrapper와 동일한 사이즈를 갖은 position:relative를 요소는
    cnt_wrap 클래스 줌 */
-   .cnt_wrap {
+.cnt_wrap {
     position: relative;
 }
 
@@ -119,6 +119,9 @@ html, body {
     font-size: 20px;
     line-height: 95px;
 }
+.header .gnb > ul > li.now > a {
+    font-weight: 700;
+}
 .header .gnb > ul > li:hover > a {
     color: #ED1C24 !important;
     font-weight: 700;
@@ -160,7 +163,8 @@ html, body {
     display: block;
     line-height: 36px;
 }
-.header .gnb > ul > li > ul > li > a:hover {
+.header .gnb > ul > li > ul > li > a:hover, 
+.header .gnb > ul > li > ul > li.now > a {
     color: #ED1C24;
     font-weight: 700;
 }
@@ -492,10 +496,10 @@ html, body {
     left: 0;
     bottom: 40px;
     width: 100%;
-    padding: 16px 0 21px 21px;
+    padding: 15px 0 22px 22px;
     border: 1px solid rgba(255,255,255,0.6);
     border-bottom-width: 0;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;    
     background-color: #121212;
 }
 .footer .family ul li a {
@@ -523,6 +527,7 @@ html, body {
     display: flex;
     border-radius: 0 0 5px 5px;
 }
+
 .footer .fnav {
     display: flex;
     padding: 57px 0 0 0;
@@ -553,13 +558,14 @@ html, body {
     .footer .family button i {
         font-size: 16px;
     }
-    .footer .family ul { 
+    .footer .family ul {
         bottom: 35px;
         padding: 10px 0 15px 15px;
     }
     .footer .family ul li a {
         line-height: 26px;
     }
+    
     .footer .fnav {
         flex-wrap: wrap;
         padding: 37px 0 0 0;
@@ -570,4 +576,4 @@ html, body {
     .footer .copyright {
         padding: 13px 0 51px 0;
     }
-} /* footer media 종료 */
+}/* footer 반응형 */
