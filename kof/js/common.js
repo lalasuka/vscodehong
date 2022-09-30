@@ -37,7 +37,8 @@ $(document).ready(function(){
     scrollChk();//함수실행
 
     $(window).scroll(function(){
-        scrollChk();//함수실행
+        scrollChk();//header 고정
+        topShow(); //top버튼 보이는 함수
     });
 
     function scrollChk(){ //함수선언
@@ -63,5 +64,26 @@ $(document).ready(function(){
             $(this).parents('li').toggleClass('sub_open')
         }
     });
+
+
+    /* top 버튼을 누르면 상단으로 스크롤 */
+    $('aside.top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    });
+
+    /* 스크롤을 어느도 내리면 aside나타나고, 다시 상단으로 올리면 aside 사라짐 */
+    topShow();
+    function topShow(){ //함수의 선언
+        scrolling = $(window).scrollTop();
+        console.log(scrolling);
+        if(scrolling > 400){
+            $('aside.top').fadeIn();
+        }else{
+            $('aside.top').fadeOut();
+        }
+    }
+
 
 });//document.ready 종료
