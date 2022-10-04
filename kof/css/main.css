@@ -680,11 +680,6 @@
 .banner ul li:last-child {
     margin-right: 0;
 }
-.banner ul li:hover {
-    transform: translate(-10px, -10px);
-    transition: 0.5s;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
-}
 .banner ul li.edu {
     background-color: #68A5D6;
 }
@@ -709,7 +704,16 @@
     font-weight: 700;
     margin: 0 0 14px 0;
 }
-
+@media screen and (min-width:641px) {
+    /* pc버전에서만 적용 */
+    .banner ul li {
+        transition: 0.5s;
+    }
+    .banner ul li:hover {
+        transform: translate(-10px, -10px);
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+    }
+}
 @media screen and (max-width:640px) {
     .banner {
         margin: 25px 0 55px 0;
@@ -718,11 +722,6 @@
         /* li와 li 사이 중간여백의 합 = 16px / li의 수 */
         width: calc(50% - 8px );
         margin: 0 16px 0 0;
-    }
-    .banner ul li:hover {
-        transform: translate(0, 0);
-        transition: 0;
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
     .banner ul li a {
         padding: 28px 0 0 0;
