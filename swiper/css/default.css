@@ -45,3 +45,6 @@ button {
     cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
 }
 
+h1, h2, h3, h4, h5, h6, strong, span, em {
+    font-weight: 400;
+}
