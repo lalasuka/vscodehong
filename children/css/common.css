@@ -135,7 +135,7 @@ html, body {
     color: #1D1D1D;
 }
 .header.black .logo a {
-    background: url(../images/common/logo.svg);
+    background: url(../images/common/logo.svg) no-repeat center center / contain;
 }
 
 /* 
@@ -199,4 +199,9 @@ html, body {
     .header .gnb ul li {
         display: none;
     }
+    /* 스크롤시 */
+    .header.black .gnb .gnb_open span {
+        background-color: #1D1D1D;
+    }
+
 }
