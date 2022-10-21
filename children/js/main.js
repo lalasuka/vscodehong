@@ -14,6 +14,11 @@ $(document).ready(function(){
 
         // verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 (주지않아도적용된다.) */
 
+        // scrollOverflow: false, 
+        /* scrollOverflow: false를 주면 스크롤 되지 않던 것이 다시 할수 있을 수 있지만
+            그로 인해서 swiper같은 것들에도 적용되어서 주엇던 클래스를 지워버리거나 없애서
+            망칠수 있다. 그래서 해당하는 속성을 따로 줄수도 있지만 그것은 권장하지 않는다.
+            차라리 overflow: visible을 주고나서 패딩으로 위아래 100정도 주면 잘 된다. */
 
         afterLoad: function(origin, destination, direction, trigger){
             // console.log(destination.index);
@@ -29,7 +34,7 @@ $(document).ready(function(){
             }
         },
 
-        responsiveWidth: 640 /* fullpage를 적용시키지 않을 모바일 사이즈 */
+        responsiveWidth: 800 /* fullpage를 적용시키지 않을 모바일 사이즈 */
     }); //fullpage
 
     /* 보건통계 숫자 카운팅 효과 */
