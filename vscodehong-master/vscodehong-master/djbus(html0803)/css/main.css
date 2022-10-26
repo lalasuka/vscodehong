@@ -1,0 +1,375 @@
+@import url(../css/default.css);
+
+header { /* header영역은 대부분 높이를 입력해 준다.*/
+    left: 0;
+    top: 0;
+    height: 100px;
+}
+header h1 {
+    float: left;
+    margin: 19px 0 0 0;
+}
+header h1 a {
+    display: block;
+    width: 179px;
+    height: 52px;
+    background: url(../images/logo.svg) no-repeat center center / cover;
+    font-size: 0;
+    line-height: 0;
+}
+header nav {
+    float: right;
+}
+header nav ul li{
+    float: left;
+}
+header nav ul li a {
+    display: block; 
+    /* a가 inline요소라서 padding을 적용하기 위해서*/
+    padding: 36px 15px 0 15px;
+    color: 1D1D1D;
+    font-size: 20px;
+}
+header button {
+    display: none;
+}
+/*display는 안보이는 요소등을 결정하기 때문에 가장 먼저 쓰고
+ 그다음에 padding이 온다. 그리고 컬러, 폰트 사이즈가 온다.*/
+
+@media screen and (max-width:640px) {
+    header { /* header영역은 대부분 높이를 입력해 준다.*/
+        height: 45px;
+    }
+    header h1 {
+        margin: 15px 0 0 0;
+    }
+    header h1 a {
+        display: block;
+        width: 52px;
+        height: 15px;
+    }
+    header nav {
+        display: none;
+    }
+    header nav ul li{
+        float: none;
+    }
+    header button {
+        display: block;
+        float: right;
+        margin: 10px 0 0 0;
+        font-size: 0;
+    }
+}
+
+.visual {
+    background-image: url(../images/visual_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+.visual strong /*장남이라서 margin을 주면 visual영역 밖에도 영향을 끼쳐서 같이 있는 배경들을 밀어낸다.*/ {
+    display: block;
+    /*strong 인라인태그라서 margin이 적용X, block요소로 변경.*/
+    padding: 482px 0 10px 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+}
+.visual p {
+  color: #ffffff;
+  line-height: 1.2;
+  font-size: 40px;
+}
+.visual em {
+    font-weight: 700;
+}
+@media screen and (max-width:640px) {
+    .visual {
+        height: auto;
+    }
+    .visual strong /*장남이라서 margin을 주면 visual영역 밖에도 영향을 끼쳐서 같이 있는 배경들을 밀어낸다.*/ {
+        padding: 318px 0 5px 0;
+        font-size: 15px;
+    }
+    .visual p {
+      padding: 0 0 50px 0;
+      line-height: 1.5;
+      font-size: 20px;
+    }
+    .visual em {
+        font-weight: 700;
+    }
+}
+
+.promotion .art {
+    margin: 168px 0 100px 0;
+}
+.promotion .art img {
+    float: left;
+}
+.promotion .art .inner {
+    float: left;
+    margin: 31px 0 0 80px;
+}
+/*두 요소에 float:right를 주면 코딩순서와 역순으로 요소들이 오른쪽에 정렬한다.*/
+.promotion .lee {
+    margin: 0 0 170px 0;
+}
+.promotion .lee img {
+    float: right;
+}
+.promotion .lee .inner {
+    float: right;
+    margin: 31px 80px 0 0;
+}
+.promotion h2 {
+    color: #1d1d1d;
+    font-size: 40px;
+    font-weight: 700;
+}
+.promotion p {
+    margin: 30px 0 40px 0;
+}
+.promotion p strong {
+    display: block;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.promotion a {
+    display: inline-block;
+    float: left;
+    padding: 7px 9px;
+    margin: 0 10px 0 0;
+    border: 1px solid #666;
+}
+@media screen and (max-width:640px) {
+    .promotion .art {
+        margin: 80px 0 40px 0;
+    }
+    .promotion .art img {
+        float: none;
+        height: auto;
+        width: 100%;
+    }
+    .promotion .art .inner {
+        float: left;
+        margin: 20px 0 0 0;
+    }
+    /*두 요소에 float:right를 주면 코딩순서와 역순으로 요소들이 오른쪽에 정렬한다.*/
+    .promotion .lee {
+        margin: 0 0 80px 0;
+    }
+    .promotion .lee img {
+        float: none;
+        height: auto;
+        width: 100%;
+    }
+    .promotion .lee .inner {
+        float: none;
+        margin: 20px 0 0 0;
+    }
+    .promotion h2 {
+        font-size: 20px;
+    }
+    .promotion p {
+        margin: 10px 0 20px 0;
+    }
+    .promotion p strong {
+        font-size: 15px;
+    }
+    .promotion a {
+        float: left;
+        padding: 7px 16px;
+        height: 34px;
+    }
+}
+
+.bbs {
+    background-image: url(../images/bbs_bg.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.bbs .notice {
+    /*notice 글자는 대부분 흰색 . 내부요소에 스타일을*/
+    color: #ffffff;
+}
+.bbs .notice .tit {
+    float: left;
+    margin: 60px 0 0 0;
+}
+.bbs .notice .tit p {
+    padding: 10px 0 20px 0;
+}
+.bbs .notice .tit a {
+    display: inline-block;
+    padding: 7px 22px;
+    border: 1px solid #666;
+}
+.bbs .notice ul {
+    float: right;
+    width: 730px;
+    margin: 120px 0 0 0;
+}
+.bbs .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255,0.2);
+}
+.bbs .notice ul li.first {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.bbs .notice ul li a {
+    padding: 16px 10px 16px 10px;
+}
+.bbs .notice ul li a strong {
+    float: left;
+    font-size: 15;
+    font-weight: 400;    
+}
+.bbs .notice ul li a .date {
+    float: right;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 5px 0 0 0;
+}
+.bbs .movie {
+    margin: 170px 0 0 0;
+} 
+
+.bbs .movie h2 {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 45px 0  ;
+}
+.bbs .movie ul li {
+    float: left;
+    width: 400px;
+    margin: 0 40px 0 0;
+}
+.bbs .movie ul li.last {
+    margin: 0;
+}
+.bbs .movie ul li a {
+    display: block;
+}
+.bbs .movie ul li a span {
+    display: block;
+}
+.bbs .movie ul li a strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+}
+@media screen and (max-width:640px) {
+    .bbs {
+        height: 328px;
+    }
+    .bbs .notice .tit {
+        float: none;
+        padding: 40px 0 0 0;
+    }
+    .bbs .notice .tit h2 {
+        font-size: 20px;
+    }
+    .bbs .notice .tit p {
+        padding: 10px 0 20px 0;
+    }
+    .bbs .notice .tit a {
+        position: absolute;
+        padding: 7px 14px;
+        margin: 160px 0 0 0;
+        border: 1px solid #666;
+    }
+    .bbs .notice ul {
+        float: left;
+        width: 100%;
+        margin: 0;
+    }
+    .bbs .notice ul li.first {
+        border-top: none;
+    }
+    .bbs .notice ul li a {
+        padding: 10px 0 10px 0;
+    }
+    .bbs .notice ul li a strong {
+        float: left;
+        font-size: 13px;    
+    }
+    .bbs .notice ul li a .cut {
+        display: none;
+    }
+    .bbs .movie {
+        margin: 80px 0 20px 0;
+    } 
+    .bbs .movie h2 {
+        color: #1d1d1d;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 140px 0 20px 0  ;
+    }
+    .bbs .movie ul li {
+        width: 1040px;
+        margin: 0 40px 0 0;
+    }
+    .bbs .movie ul li.last {
+        margin: 0;
+    }
+    .bbs .movie ul li a {
+        display: block;
+        float: left;
+    }
+    .bbs .movie ul li a span {
+        display: block;
+    }
+    .bbs .movie ul li a strong {
+        font-size: 13px;
+    }
+}
+
+footer {
+    overflow: hidden; /* footer하단에 생성된 의도하지 않은 여백 삭제를 위해 */
+    margin: 80px 0 0 0;
+    background-color: #392C2C;
+    color: rgba(255,255,255,0.8);
+}
+footer .inner {
+    float: left;
+    margin: 54px 0 64px 0;
+}
+footer .fnav li {
+    float: left;
+}
+footer .fnav li a {
+    display: block;
+    padding: 0 14px;
+}
+footer .fnav li.privacy a {
+    /* li중에서 privacy라는 클래스명을 갖은 li의 내부에 있는 a */
+    padding-left: 0;
+    font-weight: 700;
+}
+footer .info {
+    margin: 19px 0 5px 0;
+}
+footer .info address {
+    display: inline;
+}
+footer .info span {
+    margin: 0 0 0 24px;
+}
+footer button {
+    /* button태그에 넓이와 높이를 주면 글자가 좌우에 가운데 위아래 가운데 정렬됨 */
+    float: right;
+    width: 160px;
+    height: 37px;
+    padding: 0 12px 0 14px;
+    margin: 65px 0 0 0;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+footer button strong {
+    float: left;
+    font-weight: 400;
+}
+footer button span {
+    float: right;
+}
