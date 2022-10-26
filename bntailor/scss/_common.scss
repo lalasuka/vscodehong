@@ -1,12 +1,13 @@
 /* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap'); /* 본명조(일본말) = 바탕체(한국말) */
 html, body {
     color: #3D3D3D;
     line-height: 1.5;
     font-family: 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    /* letter-spacing: -0.05em; */
+    /* letter-spacing: -0.05em; (자간) */
     word-break: keep-all; /* 단어별 줄바꿈 */
 }
 #wrap { /* id="wrap" */
