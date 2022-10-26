@@ -93,6 +93,7 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .tour ul li.ico5 a:hover i {
     animation-name: ico_rotate;
     animation-duration: 1s; /* 애니메이션 0~100%까지를 1초동안 실행 */
@@ -373,6 +374,8 @@
 >>>>>>> 8c3d014276b0c07a34e6587a406318d0bb09313d
 =======
 >>>>>>> 8c3d014276b0c07a34e6587a406318d0bb09313d
+=======
+>>>>>>> 8c3d014276b0c07a34e6587a406318d0bb09313d
 
 .slide {
     margin: 151px 0;
@@ -421,6 +424,7 @@
     100% { width: 100%; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 .menu {
@@ -460,6 +464,8 @@
 }
 .menu .gnb_open:hover span.line3 {
     transform: translate(0, -40px) rotate(-315deg);
+=======
+>>>>>>> 8c3d014276b0c07a34e6587a406318d0bb09313d
 =======
 >>>>>>> 8c3d014276b0c07a34e6587a406318d0bb09313d
 =======
