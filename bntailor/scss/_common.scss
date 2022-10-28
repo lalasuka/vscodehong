@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap'); /* 본명조(일본말) = 바탕체(한국말) */
 html, body {
-    color: #3D3D3D;
+    color: $basic_font_color;
     line-height: 1.5;
     font-family: 'Noto Sans KR', 'NanumGothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Gothic Neo', 'Dotum', sans-serif;
     font-size: 16px;
@@ -77,3 +77,117 @@ html, body {
 ::-moz-selection{background:#CBA585;color:#3E3E3F;}
 ::-webkit-selection{background:#CBA585;color:#3E3E3F;} 
 
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 300;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    .logo {
+        float: left;
+        margin: 28px 0 0 42px;
+    }
+    .gnb {
+        float: right;
+        margin: 0 54px 0 0;
+        .gnb_open {
+            display: none;
+        }
+        ul {
+            li {
+                float: left;
+                a {
+                    display: block;
+                    padding: 0 24px;
+                    color: $w_tit_color;
+                    font-size: 20px;
+                    line-height: 100px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    .header {
+        .logo {
+            margin: 28px 0 0 42px;
+        }
+        .gnb {
+            margin: 0 20px 0 0;
+            ul {
+                li {
+                    a {
+                        padding: 0 24px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .header {
+        .logo {
+            margin: 28px 0 0 20px;
+            a img {
+                width: 130px;
+            }
+        }
+        .gnb {
+            ul {
+                li {
+                    a {
+                        padding: 0 20px;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .header {
+        height: 70px;
+        .logo {
+            margin: 21px 0 0 19px;
+            a img {
+                width: 108px;
+            }
+        }
+        .gnb {
+            margin: 0;
+            .gnb_open {
+                display: block;
+                position: relative;
+                width: 70px;
+                height: 66px;
+                strong {
+                    display: none;
+                }
+                span {
+                    position: absolute;
+                    right: 21px;
+                    width: 28px;
+                    height: 4px;
+                    border-radius: 2px;
+                    background-color: #FFF;
+                    &.line1 {
+                        top: 21px;
+                    }
+                    &.line2 {
+                        top: 34px;
+                        width: 18px;
+                    }
+                    &.line3 {
+                        top: 46px;
+                    }
+                }
+            }
+            ul {
+                display: none;
+            }
+        }
+    }   
+}

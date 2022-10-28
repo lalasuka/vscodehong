@@ -15,7 +15,7 @@
         left: calc(50% - 700px);
         top: 50%;
         z-index: 10;
-        color: #FFF;
+        color: $w_tit_color;
         transform: translate(0, -50%);
         strong {
             @include font_serif;
@@ -35,12 +35,25 @@
     }
     .popup { /* .visual .popup */
         height: 100vh;
+        ul li img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .btn_wrap {
+            display: flex;
+            align-items: center;
             position: absolute;
             left: calc(50% - 700px);
-            top: calc(50% + 86px);
+            top: calc(50% + 140px);
             z-index: 10;
             .btn_pagin {
+                display: flex;
+                /* span이 여러개 발생해도 한줄로 나타남
+                    -단, 내가 준 넓이보다 작게 구현될 수도 있음 */
+                font-size: 0;
+                line-height: 0;
                 span {
                     opacity: 0.5;
                     width: 57px;
@@ -55,6 +68,381 @@
                     &.swiper-pagination-bullet-active {
                         opacity: 1;
                     }
+                }
+            }
+            .btn_stop {
+                width: 7px;
+                height: 4px;
+                background-image: url(/vscodehong/bntailor/images/main/visual_btn_stop.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                font-size: 0;
+                line-height: 0;
+                &.play { /* .btn_stop.play */
+                    background-image: url(/vscodehong/bntailor/images/main/visual_btn_play.svg);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    .visual {
+        .tit {
+            left: 20px;
+        }
+        .popup { /* .visual .popup */
+            .btn_wrap {
+                left: 20px;
+            }
+        }
+    }    
+}
+@media screen and (max-width:1000px){
+    .visual {
+        .tit {
+            strong {
+                font-size: 18px;
+            }
+            h2 {
+                font-size: 65px;
+            }
+        }
+    }
+}
+@media screen and (max-width:800px){
+    .visual {
+        .tit {
+            strong {
+                font-size: 16px;
+            }
+            h2 {
+                font-size: 52px;
+            }
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .visual {
+        .tit {
+            left: 50%;
+            width: calc(100% - 40px);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            h2 {
+                font-size: 30px;
+            }
+        }
+        .popup { /* .visual .popup */
+            .btn_wrap {
+                left: 50%;
+                top: calc(50% + 90px);
+                transform: translate(-50%, 0);
+                .btn_paging {
+                    span {
+                        width: 40px;
+                    }
+                }
+                .btn_stop {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+.fabric {
+    position: relative;
+    padding: 0 0 222px 43px;
+    background-color: #483D33;
+    color: $w_tit_color;
+    .inner {
+        transition: 0.5s;
+        @include zindex_top;    
+    }
+    h2 {
+        @include zindex_top;
+        padding: 190px 0 27px 0;
+        font-size: 35px;
+        font-weight: 700;
+    }
+    .tit {
+        @include zindex_top;
+        @include font_serif;
+        font-size: 45px;
+        font-weight: 700;
+    }
+    .cnt {
+        @include zindex_top;
+        margin: 34px 0 30px 0;
+        width: 480px;
+    }
+    .tag {
+        @include zindex_top;
+        width: 515px;
+        span {
+            display: inline-block;
+            margin-right: 20px;
+            color: $w_dark_light_color;
+            &.zero {
+                margin-right: 0;
+            }
+        }
+    }
+    .bg {
+        position: absolute;
+        overflow: hidden;
+        /* bg영역안에는 bg보다 더 큰 이미지가 포함됨,
+            이미지는 스크롤에 따라 bg영역 안에서 이동할 예정,
+            그래서 overflow:hidden 영역 밖에 나간 이미지는 안보이게함
+        */
+        left: calc(50% + 33px);
+        top: 72px;
+        z-index: 1;
+        width: 587px;
+        height: 756px;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 140px 0 140px;
+            box-shadow: 5px 5px 10px rgba(255,255,255,0.1);
+        }
+    }
+}
+
+@media screen and (max-width:1440px){
+    .fabric {
+        padding: 0 0 200px 20px;
+        .bg {
+            left: 50%;
+            top: 70px;
+            width: 540px;
+            height: 725px;
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .fabric {
+        h2 {
+            font-size: 27px;
+        }
+        .tit {
+            font-size: 40px;
+        }
+        .bg {
+            left: auto;
+            right: 20px;
+            top: 65px;
+            width: 500px;
+            height: 710px;
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .fabric {
+        h2 {
+            font-size: 25px;
+        }
+        .tit {
+            font-size: 35px;
+        }
+        .cnt {
+            @include zindex_top;
+            margin: 34px 0 30px 0;
+            width: 480px;
+        }
+    }
+}
+@media screen and (max-width:800px){
+    .fabric {
+        padding: 0 0 100px 20px;
+        .inner {
+            transform: translate(0) !important;
+        }
+        h2 {
+            padding: 100px 0 18px 0;
+        }
+        .tag {
+            margin-bottom: 30px;
+        }
+        .bg {
+            position: relative;
+            right: auto;
+            top: auto;
+            width: 100%;
+            height: 600px;
+            border-radius: 0 70px 0 70px;
+            transform: translate(0) !important;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .fabric {
+        padding: 0 0 35px 0;
+        h2 {
+            padding: 39px 0 17px 0;
+            font-size: 18px;
+        }
+        .tit {
+            font-size: 20px;
+        }
+        .cnt {
+            display: none
+        }
+        .tag {
+            @include zindex_top;
+            width: auto;
+            margin: 16px 0 27px 0;
+            span {
+                margin-right: 16px;
+                &.zero {
+                    margin-right: 16px;
+                }
+            }
+        }
+        .bg {
+            position: relative;
+            top: auto;
+            width: 100%;
+            height: 413px;
+            border-radius: 0 70px 0 70px;
+            img {
+                display: block;
+                width: 120%;
+                height: 120%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.product {
+    background: url(/vscodehong/bntailor/images/main/product_bg.png) no-repeat center center / cover;
+    color: $w_tit_color;
+    .backcolor {
+        background-color: rgba(67,57,48,0.9);
+    }
+    h2 {
+        @include font_serif;
+        padding: 131px 0 95px 0;
+        font-size: 45px;
+        font-weight: 700;
+    }
+    .list {
+        @include clearfix;
+        position: relative;
+        .tit {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 25px;
+        }
+        ul {
+            float: right;
+            li {
+                position: relative;
+                width: 440px;
+                margin-bottom: 93px;
+                a {
+                    display: block;
+                    .pic {
+                        overflow: hidden;
+                        height: 440px;
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 80px 0 0 0;
+                            box-shadow: 5px 5px 10px rgba(255,255,255,0.1);
+                        }
+                    }
+                    .inner {
+                        h3 {
+                            margin-top: 12px;
+                            font-size: 35px;
+                            font-weight: 700;
+                        }
+                        p {
+                            color: $w_dark_light_color;
+                        }
+                    }
+                }
+            }
+            &.item1 {
+                margin: 304px 0 0 65px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    .product {
+        h2 {
+            padding: 131px 0 120px 0;
+        }
+        .list {
+            .tit {
+                top: -84px;
+                .m_no {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1200px){}
+@media screen and (max-width:1000px){}
+@media screen and (max-width:800px){}
+@media screen and (max-width:640px){
+    .product {
+        .backcolor {
+            padding-bottom: 50px;
+        }
+        h2 {
+            padding: 43px 0 40px 0;
+            font-size: 20px;
+            text-align: center;
+        }
+        .list {
+            .tit {
+                display: none;
+            }
+            ul {
+                width: calc(75% + 20px);
+                li {
+                    width: 100%;
+                    margin-bottom: 300px;
+                    a {
+                        .pic {
+                            height: 246px;
+                            img {
+                                border-radius: 60px 0 0 0;
+                            }
+                        }
+                        .inner {
+                            h3 {
+                                font-size: 18px;
+                                text-align: center;
+                            }
+                            p {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &.item1 {
+                    margin: 292px 0 0 0px;
+                }
+                &.item2 {
+                    position: absolute;
                 }
             }
         }
