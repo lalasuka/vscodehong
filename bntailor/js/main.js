@@ -89,7 +89,7 @@ $(document).ready(function(){
         offTop = objParent.offset().top;
         scrolling = $(window).scrollTop();
         moveVal = (scrolling - offTop + winH) * moveRate;
-        console.log(moveVal, 'moveVal');
+        // console.log(moveVal, 'moveVal');
         if(moveDir == 'left'){
             objMove.css('transform', 'translateX('+moveVal+'px)');
         }else{ //top
@@ -97,5 +97,42 @@ $(document).ready(function(){
         }
     }
 
+
+    /* product .list .tit 고정
+        -- 스크롤을 내리다가 화면에 product. 콘텐츠가 보일때는 .tit에 fixed 클래스를 추가
+        product 콘텐츠가 화면에 보이는 구간 2094 ~ 3964
+        .product .list 페이지 상단에 도달했을때 : 콘텐츠 보일 시작점
+        offset().top == 해당콘텐츠가 브라우저 상단 위쪽에 닿을 정도의 스크롤값
+
+        --처음에 tit이 나타나기전 영역 (다른 콘텐츠와 같이 스크롤되어 따라올라옴)
+            tit이 고정되는 영역 (고정되어 옆에 콘텐츠만 스크롤됨) - fixed클래스 추가
+            tit이 고정된 이후 영역 (다른 콘텐츠를 따라서 사라짐)  - end클래스 추가
+    */
+
+    let fixObj = $('.product .list .tit');
+    let fixArea = $('.product .list');
+    let fixStart = fixArea.offset().top; //1984
+    // console.log(fixStart);
+
+    objFixed();
+
+    $(window).scroll(function(){
+        objFixed();
+    });
     
+    function objFixed(){
+        console.log(scrolling);
+        if(scrolling < 1984){ // 위에서 부터 tit이 고정되기전
+            fixObj.removeClass('fixed');
+            fixObj.removeClass('end');
+        }else if((scrolling >= 1984)&&(scrolling < 3720)){ //tit이 고정될때
+            fixObj.addClass('fixed');
+            fixObj.removeClass('end');
+        }else {//고정된 이후
+            fixObj.removeClass('fixed');
+            fixObj.addClass('end');
+        }
+    }
+
+
 });//document.ready

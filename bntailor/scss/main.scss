@@ -332,7 +332,7 @@
     }
     h2 {
         @include font_serif;
-        padding: 131px 0 95px 0;
+        padding: 131px 0 60px 0;
         font-size: 45px;
         font-weight: 700;
     }
@@ -340,10 +340,35 @@
         @include clearfix;
         position: relative;
         .tit {
+            /* position: sticky는 감싸는 요소에 overflow:hidden이 없어야 한다.
+                하지만 홈페이지 전체에 id="wrap"이 스타일에 overflow:hidden이 들어감
+                overflow를 주지 않고 코딩은 어려움. 그래서 sticky는 사용불가
+
+                고정될 요소에 고정될때는 position: fixed를 줘야함.
+                fixed는 body와만 정렬
+                <div class="list">          ...relative
+                    <div class="tit">       ...absolute
+                </div>
+                tit이 absolute일때는 relative를 준 list를 기준으로 정렬함.
+                하지만 fixed로 변경되면 무조건 body랑 정렬
+                정렬의 기준값이 변경됨.... (left가 fixed일때랑 absolute일때랑 바뀜)
+                실제 화면상에서도 left의 위치는 변경X
+                absolute일때와 fixed일때 위치를 동일하게 left값을 줘야함.
+            */
             position: absolute;
-            left: 0;
+            left: calc(50% - 700px);
             top: 0;
             font-size: 25px;
+
+            &.fixed {
+                position: fixed;
+                top: 160px;
+            }
+            &.end {
+                position: absolute;
+                top: auto;
+                bottom: 89px;
+            }
         }
         ul {
             float: right;
@@ -386,21 +411,66 @@
 @media screen and (max-width:1440px){
     .product {
         h2 {
-            padding: 131px 0 120px 0;
+            padding: 131px 0 60px 0;
         }
         .list {
             .tit {
-                top: -84px;
-                .m_no {
-                    display: none;
+                top: -38px;
+                left: 20px;
+
+                &.fixed {
+                    position: fixed;
+                    top: 130px;
+                }
+            }
+            ul {
+                margin-left: 180px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .product {
+        h2 {
+            padding: 100px 0 95px 0;
+            font-size: 30px;
+        }
+        .list {
+            .tit {
+                font-size: 20px;
+            }
+            ul {
+                li {
+                    width: 550px;
+                    margin-bottom: 500px;
+                    a {
+                        .pic {
+                            height: 300px;
+                        }
+                    }
+                }
+                &.item1 {
+                    margin: 450px 0 0 0;
+                }
+                &.item2 {
+                    position: absolute;
                 }
             }
         }
     }
 }
-@media screen and (max-width:1200px){}
-@media screen and (max-width:1000px){}
-@media screen and (max-width:800px){}
+@media screen and (max-width:800px){
+    .product {
+        .list {
+            .tit {
+                display: none;
+            }
+            ul {
+                margin-left: 0;
+            }
+        }
+    }
+}
 @media screen and (max-width:640px){
     .product {
         .backcolor {
@@ -412,9 +482,6 @@
             text-align: center;
         }
         .list {
-            .tit {
-                display: none;
-            }
             ul {
                 width: calc(75% + 20px);
                 li {
@@ -441,10 +508,11 @@
                 &.item1 {
                     margin: 292px 0 0 0px;
                 }
-                &.item2 {
-                    position: absolute;
-                }
             }
         }
     }
+}
+
+.insta {
+    height: 1500px;
 }

@@ -187,6 +187,7 @@ html, body {
   width: 100%;
   height: 100px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  transition: 0.5s;
 }
 .header .logo {
   float: left;
@@ -208,6 +209,13 @@ html, body {
   color: #FFF;
   font-size: 20px;
   line-height: 100px;
+}
+.header.fixed {
+  position: fixed;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 1440px) {
@@ -597,7 +605,7 @@ html, body {
 }
 .product h2 {
   font-family: "Noto Serif KR", serif;
-  padding: 131px 0 95px 0;
+  padding: 131px 0 60px 0;
   font-size: 45px;
   font-weight: 700;
 }
@@ -613,10 +621,34 @@ html, body {
   height: 0;
 }
 .product .list .tit {
+  /* position: sticky는 감싸는 요소에 overflow:hidden이 없어야 한다.
+      하지만 홈페이지 전체에 id="wrap"이 스타일에 overflow:hidden이 들어감
+      overflow를 주지 않고 코딩은 어려움. 그래서 sticky는 사용불가
+
+      고정될 요소에 고정될때는 position: fixed를 줘야함.
+      fixed는 body와만 정렬
+      <div class="list">          ...relative
+          <div class="tit">       ...absolute
+      </div>
+      tit이 absolute일때는 relative를 준 list를 기준으로 정렬함.
+      하지만 fixed로 변경되면 무조건 body랑 정렬
+      정렬의 기준값이 변경됨.... (left가 fixed일때랑 absolute일때랑 바뀜)
+      실제 화면상에서도 left의 위치는 변경X
+      absolute일때와 fixed일때 위치를 동일하게 left값을 줘야함.
+  */
   position: absolute;
-  left: 0;
+  left: calc(50% - 700px);
   top: 0;
   font-size: 25px;
+}
+.product .list .tit.fixed {
+  position: fixed;
+  top: 160px;
+}
+.product .list .tit.end {
+  position: absolute;
+  top: auto;
+  bottom: 89px;
 }
 .product .list ul {
   float: right;
@@ -656,13 +688,48 @@ html, body {
 
 @media screen and (max-width: 1440px) {
   .product h2 {
-    padding: 131px 0 120px 0;
+    padding: 131px 0 60px 0;
   }
   .product .list .tit {
-    top: -84px;
+    top: -38px;
+    left: 20px;
   }
-  .product .list .tit .m_no {
+  .product .list .tit.fixed {
+    position: fixed;
+    top: 130px;
+  }
+  .product .list ul {
+    margin-left: 180px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .product h2 {
+    padding: 100px 0 95px 0;
+    font-size: 30px;
+  }
+  .product .list .tit {
+    font-size: 20px;
+  }
+  .product .list ul li {
+    width: 550px;
+    margin-bottom: 500px;
+  }
+  .product .list ul li a .pic {
+    height: 300px;
+  }
+  .product .list ul.item1 {
+    margin: 450px 0 0 0;
+  }
+  .product .list ul.item2 {
+    position: absolute;
+  }
+}
+@media screen and (max-width: 800px) {
+  .product .list .tit {
     display: none;
+  }
+  .product .list ul {
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 640px) {
@@ -673,9 +740,6 @@ html, body {
     padding: 43px 0 40px 0;
     font-size: 20px;
     text-align: center;
-  }
-  .product .list .tit {
-    display: none;
   }
   .product .list ul {
     width: calc(75% + 20px);
@@ -700,7 +764,7 @@ html, body {
   .product .list ul.item1 {
     margin: 292px 0 0 0px;
   }
-  .product .list ul.item2 {
-    position: absolute;
-  }
+}
+.insta {
+  height: 1500px;
 }
