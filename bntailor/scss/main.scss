@@ -415,20 +415,19 @@
         }
         .list {
             .tit {
-                top: -38px;
-                left: 20px;
-
+                left: 0;
+                font-size: 20px;
                 &.fixed {
-                    position: fixed;
-                    top: 130px;
+                    left: 20px;
                 }
             }
+        }
             ul {
                 margin-left: 180px;
             }
-        }
     }
 }
+
 @media screen and (max-width:1200px){
     .product {
         h2 {
@@ -437,7 +436,8 @@
         }
         .list {
             .tit {
-                font-size: 20px;
+                left: 10px;
+                font-size: 18px;
             }
             ul {
                 li {
@@ -463,7 +463,18 @@
     .product {
         .list {
             .tit {
+                position: relative;
                 display: none;
+                left: auto;
+                top: auto;
+                &.fixed {
+                    position: relative;
+                    left: auto;
+                }
+                &.end {
+                    position: relative;
+                    bottom: auto;
+                }
             }
             ul {
                 margin-left: 0;
@@ -514,5 +525,170 @@
 }
 
 .insta {
-    height: 1500px;
+    position: relative;
+    h2 {
+        position: relative;
+        z-index: 10;        
+        @include font_serif;
+        margin: 154px 0 62px 0;
+        font-size: 45px;
+        font-weight: 700;
+    }
+    .list {
+        padding-bottom: 145px;
+        ul {
+            li {
+                width: 360px !important;
+                font-size: 0; /*이미지 하단여백 삭제*/
+                line-height: 0;
+                a {
+                    display: block;
+                    overflow: hidden;
+                    border-radius: 60px;
+                    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                    padding: 60px;
+                }
+            }
+        }
+    }
+    .bg_txt {
+        position: absolute;
+        @include font_serif;
+        left: 0;
+        top: -57px;
+        color: $gray_light_color;
+        font-size: 100px;
+        font-weight: 700;
+        white-space: nowrap; /* 줄바꿈 금지 */
+
+        animation-name: bg_txt_ani;
+        animation-duration: 15s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; 
+        /* 기본 ease 가속도 - 동일한 속도로 애니메이션 주려면 linear */
+    }
+}
+@keyframes bg_txt_ani {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50.29%); }
+    /* 무조건 html에서 글자를 동일한 글자를 두번 입력
+        css 애니메이션으로 절반을 이동
+        그럼 두번째 단락의 글자 다시 나타남.
+    */
+}
+@media screen and (min-width:1441px){
+    .insta {
+        .list {
+            width: calc(100% + 740px); //340(gkskdml 하나의 넓이0)+340+60 = 740
+            margin-left: -370px !important;
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    .insta {
+        .list {
+            ul{
+                li{
+                    a{
+                        border-radius: 30px;
+                    }
+                }
+            }
+        }
+        .bg_txt {
+            top: -61px;
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .insta {
+        h2 {
+            font-size: 40px;
+            margin: 130px 0 40px 0;
+        }
+        .list {
+            ul {
+                li {
+                    width: 320px !important;
+                    a {
+                        border-radius: 25px;
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        padding: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .insta {
+        h2 {
+            font-size: 35px;
+            margin: 100px 0 35px 0;
+        }
+        .list {
+            ul {
+                li {
+                    width: 320px;
+                    a {
+                        border-radius: 20px;
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        padding: 35px;
+                    }
+                }
+            }
+        }
+        .bg_txt {
+            top: -70px;
+        }
+    }
+}
+@media screen and (max-width:800px){
+    .insta {
+        h2 {
+            font-size: 30px;
+        }
+        .list {
+            ul {
+                li {
+                    a {
+                        border-radius: 40px;
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .insta {
+        h2 {
+            margin: 60px 0 25px 0;
+            font-size: 20px;
+        }
+        .list {
+            padding-bottom: 82px;
+            ul {
+                li {
+                    width: auto;
+                }
+            }
+        }
+        .bg_txt {
+            top: -43px;
+            font-size: 60px;
+        }
+    }
 }

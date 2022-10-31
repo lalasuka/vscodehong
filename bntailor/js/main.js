@@ -1,5 +1,5 @@
 $(document).ready(function(){
-        const swiper = new Swiper(' .visual .popup ', { /* 팝업을 감싼는 요소의 class명 */
+    const swiper = new Swiper(' .visual .popup ', { /* 팝업을 감싼는 요소의 class명 */
 
         effect: "fade", /* fade 효과 */
 
@@ -14,7 +14,7 @@ $(document).ready(function(){
             el: '.btn_pagin', /* 해당 요소의 class명 */
             clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
         },
-      
+    
 
     });// visual swiper
 
@@ -109,23 +109,34 @@ $(document).ready(function(){
             tit이 고정된 이후 영역 (다른 콘텐츠를 따라서 사라짐)  - end클래스 추가
     */
 
-    let fixObj = $('.product .list .tit');
-    let fixArea = $('.product .list');
-    let fixStart = fixArea.offset().top; //1984
-    // console.log(fixStart);
+    let fixObj = $('.product .list .tit'); //고정요소
+    let fixArea = $('.product .list'); //고정요소를 감싸는 영역
+    let fixTop = 160; //css에서 fixed에 준 top값
+    let fixBtm = 89; //css에서 end에 준 bottom값
+    let fixStart; //fixed 시작점
+    let fixEnd; //fixed 종료점
+    // console.log(fixStart, 'fixStart');
+    // console.log(fixEnd, 'fixEnd');
 
     objFixed();
 
     $(window).scroll(function(){
         objFixed();
     });
+
+    $(window).resize(function(){
+        objFixed();
+    });
     
     function objFixed(){
-        console.log(scrolling);
-        if(scrolling < 1984){ // 위에서 부터 tit이 고정되기전
+        // console.log(scrolling);
+        fixStart = fixArea.offset().top - fixTop;
+        fixEnd = fixArea.offset().top + fixArea.height() - fixObj.height() - fixBtm - fixTop;
+
+        if(scrolling < fixStart){ // 위에서 부터 tit이 고정되기전
             fixObj.removeClass('fixed');
             fixObj.removeClass('end');
-        }else if((scrolling >= 1984)&&(scrolling < 3720)){ //tit이 고정될때
+        }else if((scrolling >= fixStart)&&(scrolling < fixEnd)){ //tit이 고정될때
             fixObj.addClass('fixed');
             fixObj.removeClass('end');
         }else {//고정된 이후
@@ -134,5 +145,36 @@ $(document).ready(function(){
         }
     }
 
+
+    /* insta 팝업 */
+
+    const swiperInsta = new Swiper('.insta .list', { /* 팝업을 감싼는 요소의 class명 */
+
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            640: {    /* 800px 이상일때 적용 */
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            800: {    /* 800px 이상일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            1000: {    /* 1200px 이상일때 적용 */
+                slidesPerView: 4,
+                spaceBetween: 0,
+            },
+            1200: {    /* 1200px 이상일때 적용 */
+                slidesPerView: 5,
+                spaceBetween: 0,
+            },
+            1440: {    /* 1200px 이상일때 적용 */
+                slidesPerView: 6,
+                spaceBetween: 0,
+            },
+        },
+
+    });
 
 });//document.ready
