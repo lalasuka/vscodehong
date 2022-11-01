@@ -84,83 +84,64 @@ html, body {
     z-index: 300;
     width: 100%;
     height: 100px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     transition: 0.5s;
+    
     .logo {
         float: left;
-        margin: 28px 0 0 42px;
+        margin: 30px 0 0 40px;
     }
     .gnb {
         float: right;
-        margin: 0 54px 0 0;
+        margin: 0 40px 0 0;
         .gnb_open {
             display: none;
         }
-        ul {
-            li {
-                float: left;
-                a {
-                    display: block;
-                    padding: 0 24px;
-                    color: $w_tit_color;
-                    font-size: 20px;
-                    line-height: 100px;
+        .gnb_wrap {
+            ul {
+                li {
+                    float: left;
+                    a {
+                        display: block;
+                        padding: 0 24px;
+                        color: $w_tit_color;
+                        font-size: 22px;
+                        line-height: 100px; /* header의 높이 */
+                    }
                 }
             }
         }
     }
-    &.fixed { //header.fixed header에 fixed 클래스가 추가됐을때 - header 고정
+    &.fixed { //header.fixed header에 fixed 클래스가 추가됐을때 - header 고정 
         position: fixed;
         backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px); //브라우저 호환성 때문에
+        -webkit-backdrop-filter: blur(10px); //브라우저 호환성 때문에 
         background-color: rgba(0,0,0,0.1);
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 }
-
 @media screen and (max-width:1440px){
-    .header {
-        .logo {
-            margin: 28px 0 0 42px;
-        }
-        .gnb {
-            margin: 0 20px 0 0;
-            ul {
-                li {
-                    a {
-                        padding: 0 24px;
-                        font-size: 20px;
-                    }
-                }
-            }
-        }
+    .header .logo a img {
+        width: 130px;
+    }
+    .header .gnb .gnb_wrap ul li a {
+        font-size: 18px;
     }
 }
-@media screen and (max-width:1200px){
-    .header {
-        .logo {
-            margin: 28px 0 0 20px;
-            a img {
-                width: 130px;
-            }
-        }
-        .gnb {
-            ul {
-                li {
-                    a {
-                        padding: 0 20px;
-                        font-size: 18px;
-                    }
-                }
-            }
-        }
+@media screen and (max-width:1440px){
+    .header .logo a img {
+        width: 120px;
+    }
+    .header .gnb .gnb_wrap ul li a {
+        padding: 0 15px;
+        font-size: 17px;
     }
 }
+
 @media screen and (max-width:1000px){
     .header {
-        height: 70px;
+        height: 60px;
         .logo {
-            margin: 21px 0 0 19px;
+            margin: 16px 0 0 20px;
             a img {
                 width: 108px;
             }
@@ -170,33 +151,181 @@ html, body {
             .gnb_open {
                 display: block;
                 position: relative;
-                width: 70px;
-                height: 66px;
+                z-index: 1;
+                width: 60px;
+                height: 60px;
                 strong {
                     display: none;
                 }
                 span {
                     position: absolute;
-                    right: 21px;
-                    width: 28px;
-                    height: 4px;
-                    border-radius: 2px;
+                    right: 20px;
+                    width: 21px;
+                    height: 2px;
                     background-color: #FFF;
-                    &.line1 {
-                        top: 21px;
+                    &.line1 {   /*  span.line1  */
+                        top: 25px;
                     }
                     &.line2 {
-                        top: 34px;
-                        width: 18px;
+                        top: 32px;
+                        width: 16px;
                     }
                     &.line3 {
-                        top: 46px;
+                        top: 39px;
                     }
                 }
             }
+            .gnb_wrap {
+                display: block;
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 1;
+                width: 100%;
+                max-width: 375px;
+                height: 100vh;
+                background-color: #FFF;
+                color: #3d3d3d;
+                ul {
+                    margin: 60px 0 0 0;
+                    li {
+                        float: none;
+                        border-bottom: 1px solid #f4f4f4;
+                        a {
+                            @include font_serif;
+                            padding: 0;
+                            color: $basic_color;
+                            font-size: 22px;
+                            line-height: 55px;
+                            text-align: center;
+                        }
+                        &:first-child {
+                            border-top: 1px solid #F4F4F4;
+                        }
+                    }
+                }
+            }
+            &::after {
+                /* 
+                    화면에 꽉차는 배경은 
+                    position:fixed 
+                    left, right, top, bottom 사방을 모두 0으로 주면 
+                    left:0; top:0; width:100%; height:100%;와 동일하게 들어감.
+
+                    <div class="gnb">
+                        <button class="gnb_open"></button>
+                        <div class="gnb_wrap"></div>
+                        ::after -- gnb::after
+                    </div>
+                    이런구조에서 
+                    gnb_open과 gnb_wrap, gnb::after의 순서를 조정할 수 있음
+                    z-index는 이렇게 나란히 들어간 요소들 사이에서 높은 숫자가 위로 올라감
+
+                    <button class="gnb_open"></button>
+                    <div class="gnb_wrap">
+                        ::after -- gnb_wrap::after
+                    </div>
+                    이런 구조라면 gnb_wrap::after는 gnb_wrap안에 존재하기 때문에 
+                    그 밖에 있는 gnb_open, gnb_wrap과의 순서를 절대 조정 불가능함
+
+                */
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                height: 100vh;
+                background-color: rgba(0,0,0,0.5);
+                content: "";
+            }
+        }//gnb 종료
+    }
+}
+
+.footer {
+    @include clearfix;
+    padding: 65px 0;
+    background-color: #231304;
+    color: $w_dark_light_color;
+    .logo {
+        display: none;
+    }
+    .sns {
+        float: right;
+        ul {
+            @include clearfix;
+            li {
+                float: left;
+                a {
+                    display: block;
+                    position: relative;
+                    width: 49px;
+                    height: 49px;
+                    border-width: 1px 1px 1px 0;
+                    border-style: solid;
+                    border-color: rgba(255,255,255,0.1);
+                    font-size: 0;
+                    line-height: 0;
+                    &::before {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        /* 배경이미지가 한개를 보이는 영역을 제한해서 써야하기 때문에
+                           before, after에서 표시.
+                           이때 before, after의 사이즈는 내가 사용할 아이콘의 넓이
+                           - 저장할때 활용된 아이콘의 넓이 */
+                        width: 30px;
+                        height: 30px;
+                        background-image: url(/vscodehong/bntailor/images/common/footer_ico.svg);
+                        background-repeat: no-repeat;
+                        content: "";
+                    }
+                }
+                &:first-child {
+                    a {
+                        border-left-width: 1px;
+                    }
+                }
+                &.facebook a::before {
+                    background-position: left top;
+                }
+                &.insta a::before {
+                    background-position: left -30px top;
+                }
+                &.naver a::before {
+                    background-position: left -60px top;
+                }
+            }//li종료
+        }
+    }
+    .inner {
+        float: left;
+    }
+}
+@media screen and (max-width:1000px){
+    .footer {
+        padding: 30px 0;
+        .sns {
+            position: relative;
+            float: none;
+            left: calc(50% - 74px);
+            margin-bottom: 30px;
             ul {
-                display: none;
+                li {
+                    float: left;
+                    a {
+                        width: 49px;
+                        height: 49px;
+                    }
+                }//li종료
             }
         }
-    }   
+        .inner {
+            float: none;
+            span {
+                display: block;
+            }
+        }
+    }
 }
