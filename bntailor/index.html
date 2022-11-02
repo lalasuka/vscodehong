@@ -16,7 +16,24 @@
 <body>
     <div id="wrap">
         <header class="header">
-            <h1 class="logo"><a href="/vscodehong/bntailor/index.html"><img src="/vscodehong/bntailor/images/common/logo.svg" alt="B&TAILOR"></a></h1>
+            <h1 class="logo">
+                <a href="/vscodehong/bntailor/index.html">
+                    <!-- svg파일을 img태그가 아니라 svg코드로 삽입하는 방법
+                         svg파일을 코딩프로그램에서 열면 코드가 나타남
+                         <svg></svg>까지의 소스를 복사해서 html에서 삽입할 위치에
+                         추가한다.
+
+                         css에서 svg를 불러서 사이즈를 조절(넓이만 조절하면 높이는 비율에 맞게 조정)
+                         svg안에 있는 text, path, polygon 등의 태그를 불러서 fill로 색상을 변경
+                         장점 1. svg파일이 없어도 코드로 아이콘을 표현할수 있음
+                              2. 크기와 색상을 마음대로 변경할수 있음
+                         단점 1. 모든 브라우저에서 지원되지는 않음
+                    -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 44">
+                        <text id="logo" transform="translate(0 35)" fill="#fff" font-size="30" font-family="NotoSerifKR-Bold, Noto Serif KR" font-weight="700"><tspan x="0" y="0">B&amp;TAILOR</tspan></text>
+                    </svg>
+                </a>
+            </h1>
             <!--
                 모바일에서 메뉴를 열면 gnb에 mobile_open 
                 gnb_open 버튼은 三 > X 애니메이션
@@ -26,7 +43,7 @@
                     각자에 class를 추가하는게 아니라 모든 요소를 감싸는 요소에 class를 추가해서
                     효과를 줌.
             -->
-            <nav class="gnb mobile_open">
+            <nav class="gnb">
                 <button class="gnb_open">
                     <strong>메뉴열기</strong>
                     <span class="line1"></span> 
@@ -35,14 +52,14 @@
                 </button>
                 <div class="gnb_wrap">
                     <ul>
-                        <li><a href="#n">About Us</a></li>
-                        <li><a href="#n">Line</a></li>
-                        <li><a href="#n">Artwork</a></li>
-                        <li><a href="#n">Trunkshow</a></li>
-                        <li><a href="#n">Contact</a></li>
-                        <li><a href="#n">Journal</a></li>
-                        <li><a href="#n">Stock notice</a></li>
-                        <li><a href="#n">Mall</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/about.html">About Us</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/line.html">Line</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/artwork.html">Artwork</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/trunkshow.html">Trunkshow</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/contact.html">Contact</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/journal.html">Journal</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/notice.html">Stock notice</a></li>
+                        <li><a href="http://www.chadprom.com/" target="_blank" title="새창으로 열기">Mall</a></li>
                     </ul>
                 </div>
             </nav>

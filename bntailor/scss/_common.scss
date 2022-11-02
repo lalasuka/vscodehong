@@ -89,6 +89,12 @@ html, body {
     .logo {
         float: left;
         margin: 30px 0 0 40px;
+        svg {
+            width: 161px;
+            text {
+                fill: #FFF;
+            }
+        }
     }
     .gnb {
         float: right;
@@ -120,15 +126,15 @@ html, body {
     }
 }
 @media screen and (max-width:1440px){
-    .header .logo a img {
+    .header .logo a svg {
         width: 130px;
     }
     .header .gnb .gnb_wrap ul li a {
         font-size: 18px;
     }
 }
-@media screen and (max-width:1440px){
-    .header .logo a img {
+@media screen and (max-width:1200px){
+    .header .logo a svg {
         width: 120px;
     }
     .header .gnb .gnb_wrap ul li a {
@@ -142,7 +148,7 @@ html, body {
         height: 60px;
         .logo {
             margin: 16px 0 0 20px;
-            a img {
+            a svg {
                 width: 108px;
             }
         }
@@ -151,13 +157,14 @@ html, body {
             .gnb_open {
                 display: block;
                 position: relative;
-                z-index: 1;
+                z-index: 2;
                 width: 60px;
                 height: 60px;
                 strong {
                     display: none;
                 }
                 span {
+                    transition: 0.5s;
                     position: absolute;
                     right: 20px;
                     width: 21px;
@@ -178,7 +185,7 @@ html, body {
             .gnb_wrap {
                 display: block;
                 position: fixed;
-                right: 0;
+                right: -100%;
                 top: 0;
                 z-index: 1;
                 width: 100%;
@@ -186,6 +193,7 @@ html, body {
                 height: 100vh;
                 background-color: #FFF;
                 color: #3d3d3d;
+                transition: 0.5s;
                 ul {
                     margin: 60px 0 0 0;
                     li {
@@ -194,7 +202,7 @@ html, body {
                         a {
                             @include font_serif;
                             padding: 0;
-                            color: $basic_color;
+                            color: $basic_font_color;
                             font-size: 22px;
                             line-height: 55px;
                             text-align: center;
@@ -229,6 +237,8 @@ html, body {
                     그 밖에 있는 gnb_open, gnb_wrap과의 순서를 절대 조정 불가능함
 
                 */
+                opacity: 0;
+                transition: opacity 0.5s;
                 position: fixed;
                 left: 0;
                 right: 0;
@@ -237,6 +247,32 @@ html, body {
                 height: 100vh;
                 background-color: rgba(0,0,0,0.5);
                 content: "";
+            }
+            // 모바일 메뉴가 열렸을때
+            &.mobile_open {
+                .gnb_open {
+                    span {
+                        width: 25px;
+                        background-color: #3d3d3d;
+                        &.line1 {   /*  span.line1  */
+                            top: 30px;
+                            transform: rotate(45deg);
+                        }
+                        &.line2 {
+                            right: -27px;
+                        }
+                        &.line3 {
+                            top: 30px;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+                .gnb_wrap {
+                    right: 0;
+                }
+                &::after {
+                    opacity: 1;
+                }
             }
         }//gnb 종료
     }

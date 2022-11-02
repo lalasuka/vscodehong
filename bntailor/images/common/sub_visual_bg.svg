@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1921.5" height="521.51" viewBox="0 0 1921.5 521.51">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #aa5757;
+      }
+
+      .cls-2 {
+        fill: #707070;
+      }
+    </style>
+  </defs>
+  <g transform="translate(-4124.5 -3302.493)">
+    <path id="sub_visual_bg" class="cls-1" d="M-538.5-155V193.811L-120.635,365.5,1382,193.811V-155Z" transform="translate(4663.5 3457.993)"/>
+    <path id="sub_visual_bg_-_윤곽선" data-name="sub_visual_bg - 윤곽선" class="cls-2" d="M-539-155.5H1382.5V194.257l-.443.05L-120.706,366.01l-.119-.049L-539,194.146Zm1920.5,1H-538V193.476l417.436,171.512L1381.5,193.365Z" transform="translate(4663.5 3457.993)"/>
+  </g>
+</svg>

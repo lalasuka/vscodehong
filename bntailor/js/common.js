@@ -26,4 +26,34 @@ $(document).ready(function(){
             };
       }
       
-});
+      /* 
+            모바일 메뉴 열기
+            .header .gnb .gnb_open 을 클릭했을때
+            1. 자기자신한테 mobile_open 클래스를 추가하거나 삭제
+               (닫는 버튼과 여는 버튼 두가지 역할을 모두 함)
+            2. .header .gnb .gnb_open strong에 쓰여있는 글자를
+               메뉴열기, 메뉴닫기로 변경해줘야 함
+            
+            메뉴가 열린 있는 상태인지, 메뉴가 닫혀있는 상테인지 구분...
+            닫혀있으면 - mobile_open클래스를 추가, "메뉴닫기"라고 문구를 변경
+            열려있으면 - mobile_open클래스를 삭제, "메뉴열기"라고 문구를 변경
+
+            mobile_open 클래스가 없으면 - 닫혀있는 상태 / 있으면 열린 상태...
+      */
+
+      let gnbStu; //메뉴가 열렸는지 여부를 저장
+      $('.header .gnb .gnb_open').on('click', function(){
+            // console.log('누름');
+            gnbStu = $('.header .gnb').hasClass('mobile_open');
+            if(gnbStu == true){ //열린상태 -- 닫는기능
+            // console.log(' true 열린상태');
+            $('.header .gnb').removeClass('mobile_open');
+            }else{ //닫힌상태 -- 여는 기능
+            // console.log(' false 닫힌상태');
+            $('.header .gnb').addClass('mobile_open');
+            }
+      });
+
+
+
+});//document.ready

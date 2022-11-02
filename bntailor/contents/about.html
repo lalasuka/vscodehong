@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/vscodehong/bntailor/js/jquery-3.6.0.min.js"></script>
+  <script src="/vscodehong/bntailor/js/sub.js"></script>
+  <script src="/vscodehong/bntailor/js/common.js"></script>
+  <link rel="stylesheet" href="/vscodehong/bntailor/css/sub.css">
+  <link rel="stylesheet" href="/vscodehong/bntailor/css/contents.css">
+  <!-- html에서는 scss를 컴파일한 css를 호출해서 사용 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <title>Chairman > About Us > B&TAILOR</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="header">
+            <h1 class="logo">
+                <a href="/vscodehong/bntailor/index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 44">
+                        <text id="logo" transform="translate(0 35)" fill="#fff" font-size="30" font-family="NotoSerifKR-Bold, Noto Serif KR" font-weight="700"><tspan x="0" y="0">B&amp;TAILOR</tspan></text>
+                    </svg>
+                </a>
+            </h1>
+            <!--
+                모바일에서 메뉴를 열면 gnb에 mobile_open 
+                gnb_open 버튼은 三 > X 애니메이션
+                gnb_wrap은 오른쪽에서 왼쪽이로 이동해서 나타남
+                gnb::after에 줄 배경은 검은색은 서서히 나타남.. 
+                ==> 애니메이션 들어갈 요소가 많음... 
+                    각자에 class를 추가하는게 아니라 모든 요소를 감싸는 요소에 class를 추가해서
+                    효과를 줌.
+            -->
+            <nav class="gnb">
+                <button class="gnb_open">
+                    <strong>메뉴열기</strong>
+                    <span class="line1"></span> 
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </button>
+                <div class="gnb_wrap">
+                    <ul>
+                        <li><a href="/vscodehong/bntailor/contents/about.html">About Us</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/line.html">Line</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/artwork.html">Artwork</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/trunkshow.html">Trunkshow</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/contact.html">Contact</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/journal.html">Journal</a></li>
+                        <li><a href="/vscodehong/bntailor/contents/notice.html">Stock notice</a></li>
+                        <li><a href="http://www.chadprom.com/" target="_blank" title="새창으로 열기">Mall</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- 
+            각 1차메뉴마다 sub_visual 배경을 변경 
+            about us - sub_bg1
+            line - sub_bg2
+         -->
+        <div class="sub_visual sub_bg1">
+            <div class="wrapper">
+                <div class="location">
+                    <span>home</span>
+                    <span>About Us</span>
+                    <span>Chairman</span>
+                </div>
+                <div class="tit">About Us</div>
+            </div>
+            <div class="sub_visual_bg"></div>
+            <div class="sub_visual_path">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="sub_visual_path" clipPathUnits="objectBoundingBox" transform="scale(0.00078125,0.0013888888888889)">
+                        <path d="M-538.5-155V251.515l419.035,90.909L1382,227.273V-155Z" transform="translate(539 155.5)"/>
+                    </clipPath>
+                </svg>
+            </div>
+             <!-- svg에 clipPath를 추가하면 svg는 화면에 출력되지 않습니다.
+                 css에서 clip-path로 사용하기 위해서 변환한 것 
+                 svg가 눈에 안보이는 것 뿐 공간은 차지함...
+            -->
+        </div>
+        <nav class="lnb"><!-- local navigation bar 서브메뉴-->
+            <div class="wrapper">
+                <div class="lnb_wrap">
+                    <ul>
+                        <!-- 현재 메뉴에 active 클래스 추가 -->
+                        <li class="active"><a href="#n">Chairman</a></li>
+                        <li><a href="#n">Family</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                        <li><a href="#n">Our Business</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            
+        </div>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="logo">
+                    <a href="#n"><img src="/vscodehong/bntailor/images/common/logo.svg" alt="비엔테일러 로고"></a>
+                </div>
+                <div class="sns">
+                    <ul>
+                        <li class="insta"><a href="https://www.instagram.com/bntailor/" target="_blank" title="새창으로 열림">인스타그램</a></li>
+                        <li class="fackbook"><a href="https://www.facebook.com/bntailor" target="_blank" title="새창으로 열림">페이스북</a></li>
+                        <li class="naver_blog"><a href="https://blog.naver.com/bntailor" target="_blank" title="새창으로 열림">네이버 블로그</a></li>
+                    </ul>
+                </div>
+                <div class="inner">
+                    <div class="finfo">
+                        <span>주식회사 비앤테일러샵</span>
+                        <span>대표자 박정열</span>
+                        <span>사업자 등록번호 101 86 69719</span><br>
+                        <span>B&TAILOR 31, Dosan-daero 81-gil, Gangnam-gu, Seoul, Republic of Korea</span>
+                    </div>
+                    <div class="copyright">COPYRIGHT © 2020 B&TAILOR</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
