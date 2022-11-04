@@ -8,6 +8,14 @@
     main.css나 sub.css에서 default, common을 필요에 따라서 import 해서 사용하면 됨.
 */
 
+.header.fixed { //header.fixed header에 fixed 클래스가 추가됐을때 - header 고정 
+    position: fixed;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); //브라우저 호환성 때문에 
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 .visual {
     position: relative;
     .tit {

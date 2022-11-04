@@ -187,6 +187,7 @@ html, body {
   width: 100%;
   height: 100px;
   transition: 0.5s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .header .logo {
   float: left;
@@ -214,13 +215,6 @@ html, body {
   color: #FFF;
   font-size: 22px;
   line-height: 100px; /* header의 높이 */
-}
-.header.fixed {
-  position: fixed;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 1440px) {
@@ -336,6 +330,7 @@ html, body {
         그 밖에 있는 gnb_open, gnb_wrap과의 순서를 절대 조정 불가능함
 
     */
+    display: none;
     opacity: 0;
     transition: opacity 0.5s;
     position: fixed;
@@ -366,6 +361,7 @@ html, body {
     right: 0;
   }
   .header .gnb.mobile_open::after {
+    display: block;
     opacity: 1;
   }
 }
@@ -472,6 +468,14 @@ html, body {
     파일명 앞에 _(언더바)를 입력하면 sass 컴파일러가 해당 파일은 컴파일 하지 않음
     main.css나 sub.css에서 default, common을 필요에 따라서 import 해서 사용하면 됨.
 */
+.header.fixed {
+  position: fixed;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .visual {
   position: relative;
 }

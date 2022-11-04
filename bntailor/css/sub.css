@@ -187,6 +187,7 @@ html, body {
   width: 100%;
   height: 100px;
   transition: 0.5s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .header .logo {
   float: left;
@@ -214,13 +215,6 @@ html, body {
   color: #FFF;
   font-size: 22px;
   line-height: 100px; /* header의 높이 */
-}
-.header.fixed {
-  position: fixed;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 1440px) {
@@ -336,6 +330,7 @@ html, body {
         그 밖에 있는 gnb_open, gnb_wrap과의 순서를 절대 조정 불가능함
 
     */
+    display: none;
     opacity: 0;
     transition: opacity 0.5s;
     position: fixed;
@@ -366,6 +361,7 @@ html, body {
     right: 0;
   }
   .header .gnb.mobile_open::after {
+    display: block;
     opacity: 1;
   }
 }
@@ -468,6 +464,20 @@ html, body {
   }
 }
 /* 서브 공통 레이아웃 */
+.header.fixed {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.header.fixed .logo svg text {
+  fill: #1d1d1d;
+}
+.header.fixed .gnb .gnb_wrap ul li a {
+  color: #1d1d1d;
+}
+.header.fixed .gnb .gnb_open span {
+  background-color: #3d3d3d;
+}
+
 .sub_visual {
   position: relative;
   height: 450px;
@@ -585,13 +595,41 @@ html, body {
 }
 .lnb {
   height: 74px;
+  margin-top: 41px;
+  position: relative;
+}
+.lnb .lnb_fix {
+  /* 나중에 fixed로 변경될 콘텐츠 - absolute로 코딩하는게 좋음 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  height: 74px;
+}
+.lnb.fixed .lnb_fix {
+  position: fixed;
+  top: 100px; /* header 높이만큼 아래 */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.lnb .lnb_wrap {
+  overflow-x: auto; /* lnb_wrap의 넓이보다 ul의 넓이가 더 길어질때만 스크롤바가 생성 */
+  overflow-y: hidden;
+}
+.lnb .lnb_wrap ul {
+  white-space: nowrap;
+  /* 하위 요소들 줄바꿈 금지 - 블럭요소는 안됨, float들어간 요소도 안됨,
+      inline요소나 inline-block만 적용 됨.
+      단, inline-block 요소의 사이사이에 space 한칸의 여백이 들어감.
+      그럼 요소들 사이의 여백을 이를 감안해서 줄이면 됨    
+  */
 }
 .lnb .lnb_wrap ul li {
-  float: left;
+  display: inline-block;
 }
 .lnb .lnb_wrap ul li a {
   display: block;
-  padding: 0 29px;
+  padding: 0 22px;
   color: #999;
   font-size: 24px;
 }
@@ -611,4 +649,60 @@ html, body {
   height: 1px;
   background-color: #28120D;
   content: "";
+}
+
+@media screen and (max-width: 1200px) {
+  .lnb {
+    height: 50px;
+  }
+  .lnb .lnb_fix {
+    height: 50px;
+  }
+  .lnb.fixed .lnb_fix {
+    top: 100px;
+  }
+  .lnb .lnb_wrap ul li a {
+    padding: 0 20px;
+    font-size: 20px;
+  }
+  .lnb .lnb_wrap ul li.active a::before {
+    left: 0;
+    top: 4px;
+    width: 11px;
+    height: 1px;
+    background-color: #28120D;
+    content: "";
+  }
+}
+@media screen and (max-width: 1000px) {
+  .lnb {
+    height: 45px;
+  }
+  .lnb .lnb_fix {
+    height: 45px;
+  }
+  .lnb.fixed .lnb_fix {
+    top: 60px;
+  }
+  .lnb .lnb_wrap ul li a {
+    padding: 0 18px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .lnb {
+    height: 33px;
+  }
+  .lnb .lnb_wrap ul li a {
+    padding: 0 8px;
+    font-size: 16px;
+  }
+  .lnb .lnb_wrap ul li.active a::before {
+    left: 0;
+    top: 4px;
+    width: 10px;
+    height: 1px;
+    background-color: #28120D;
+    content: "";
+  }
 }
