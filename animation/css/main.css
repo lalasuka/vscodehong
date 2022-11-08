@@ -109,7 +109,7 @@
     /* 회전할 오브젝트는 정사각형으로 주는 것이 좋습니다. - 원의 중심을 기준으로 회전 가능
        정사각형이 아닌 도형을 돌리면 돌면서 위아래로 위치가 이동된다. */
     height: 285px;
-    background: url(../images/circle_txt.svg) no-repeat right bottom;
+    background: url(../images/circle_txt.png) no-repeat right bottom;
 
     animation-name: circle_rotate;
     animation-duration: 5s;

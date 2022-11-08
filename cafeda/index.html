@@ -7,7 +7,9 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/common.js"></script>
   <title>CAFFDA</title>
@@ -34,12 +36,18 @@
                         <li><a href="#n">Support</a></li>
                     </ul>
                 </div>
-                <button>
-                    <i class="material-symbols-outlined">language</i>
-                </button>
-                <button>
-                    <i class="material-symbols-outlined">search</i>
-                </button>
+                <div class="tnb">
+                    <button>
+                        <a href="#n">
+                            <i class="material-symbols-outlined">language</i>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="#n">
+                            <i class="material-symbols-outlined">search</i>
+                        </a>
+                    </button>
+                </div>
             </nav>
         </header>
         <section class="visual">
@@ -51,9 +59,165 @@
                 </div>
             </div>
         </section>
-        <section class="hit"></section>
-        <section class="manage"></section>
-        <section class="event"></section>
+        <section class="hit">
+            <div class="wrapper">
+                <h2>Hit <span>Product</span></h2>
+                <div class="hit_wrap">
+                   <ul>
+                        <li class="coffee active">
+                            <a href="#n" class="tit"><h3>Organic Coffee</h3></a>
+                            <div class="detail">
+                                <div class="coffee_pic"><img src="images/main/coffee_pictur.png" alt="커피콩 사진"></div>
+                                <div class="navi">
+                                    <button class="prev"><i class="material-symbols-outlined">arrow_back_ios</i></button>
+                                    <span>Organic Coffee</span>
+                                    <button class="next"><i class="material-symbols-outlined">arrow_forward_ios</i></button>
+                                </div>
+                                <div class="list swiper">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <img src="images/main/organic1.png" alt="포장된 커피가루 사진">
+                                                <h4>에스프레소 블렌드 1Kg</h4>
+                                                <span>Espresso Blend 1Kg</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <img src="images/main/organic2.png" alt="포장된 커피가루 사진">
+                                                <h4>에스프레소 블렌드 250g</h4>
+                                                <span>Espresso Blend 250g</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <img src="images/main/organic3.png" alt="포장된 커피가루 사진">
+                                                <h4>유기농 러브유 블렌드</h4>
+                                                <span>Organic Love You Blend</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <img src="images/main/organic1.png" alt="포장된 커피가루 사진">
+                                                <h4>에스프레소 블렌드 1Kg*2</h4>
+                                                <span>Espresso Blend 1Kg*2EA</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bag">
+                            <a href="#n" class="tit"><h3>Organic Dripbag</h3></a>
+                            <div class="detail">
+                                <div class="drip_pic"><img src="images/main/coffee.png" alt="찻잎 사진"></div>
+                                <div class="navi">
+                                    <button class="prev"><i class="material-symbols-outlined">arrow_back_ios</i></button>
+                                    <span>Organic Dripbag</span>
+                                    <button class="next"><i class="material-symbols-outlined">arrow_forward_ios</i></button>
+                                </div>
+                                <div class="list swiper">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <img src="images/main/drip_coffee1.png" alt="커피가루 사진">
+                                                <h4>하우스 드립백 1박스</h4>
+                                                <span>house drip bag 1box</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <img src="images/main/drip_coffee2.png" alt="커피가루 사진">
+                                                <h4>에스프레소 블렌드 대용량</h4>
+                                                <span>espresso blends large 200EA</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <img src="images/main/drip_coffee3.png" alt="커피가루 사진">
+                                                <h4>에스프레소 블렌드 대용량</h4>
+                                                <span>espresso blends large 490EA</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <img src="images/main/drip_coffee4.png" alt="커피가루 사진">
+                                                <h4>하우스 드립백 선물상자</h4>
+                                                <span>House Drip Bag Gift Box</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                   </ul>
+                </div>
+        </section>
+        <section class="manage">
+            <div class="wrapper">
+                <p><span>사람</span>과 <span>친환경</span>을<br class="m_on"> 귀하게 여기는<br>
+                    <span>지속 가능 경영</span>을<br class="m_on"> <span>실천</span>합니다.</p>
+            </div>
+        </section>
+        <section class="event">
+            <div class="circle"></div>
+            <div class="wrapper">
+                <h2>NEW EVENT</h2>
+                <div class="list swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <img src="images/main/event1.png">
+                                <div class="txt">
+                                    <p>신메뉴 '공주밤라떼&소금빵' 체험단 모집<br>
+                                    <span>2022.10.05 ~ 2022.10.11</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <img src="images/main/event2.png">
+                                <div class="txt">
+                                    <p>10월 커피베이 가맹점 칭찬 이벤트<br>
+                                    <span>2022.10.01 ~ 2022.10.31</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <img src="images/main/event3.png">
+                                <div class="txt">
+                                    <p>[Go Green] 1회용 컵 사용 줄이기 위한 그린베이 적립 이벤트<br>
+                                    <span>2022.06.15 ~ 2022.07.31</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <img src="images/main/event4.png">
+                                <div class="txt">
+                                    <p>돼지바 빙수 씨즐영상 리그램 EVENT<br>
+                                    <span>2022.08.01 ~ 2022.08.07</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <img src="images/main/event5.png">
+                                <div class="txt">
+                                    <p>2022 빙수 신메뉴 체험단 모집<br>
+                                    <span>2022.04.25 ~ 2022.05.02</span></p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="navi">
+                        <button class="prev"><i class="material-symbols-outlined">arrow_back_ios</i></button>
+                        <button class="next"><i class="material-symbols-outlined">arrow_forward_ios</i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="banner"></section>
         <footer class="footer"></footer>
     </div>

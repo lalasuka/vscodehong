@@ -16,3 +16,323 @@
     letter-spacing: -0.05em;
     color: #FFF;
 }
+@media screen and (max-width:640px){
+    .visual h2 {
+        padding: 291px 0 0 0;
+        font-size: 30px;
+    }
+}
+
+.hit {
+    margin: 67px 0 120px 0;
+}
+.hit h2 {
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.05em;
+}
+.hit h2 span {
+    color: #ccc;
+}
+.hit .hit_wrap {
+    position: relative;
+    margin-left: 56px;
+    height: 691px;
+}
+.hit .hit_wrap::before {
+    position: absolute;
+    left: -38px;
+    top: 127px;
+    width: 8px;
+    height: 167px;
+    background-color: #ECECEC;
+    content: "";
+}
+.hit ul {
+    padding-top: 157px;
+}
+.hit ul li {
+    margin: 0 0 46px 0;
+}
+.hit ul li a.tit {
+    display: inline-block;
+}
+.hit ul li a.tit h3 {
+    font-size: 25px;
+    color: #999;
+}
+.hit ul li.active a.tit h3 {
+    font-weight: 700;
+    color: #AD222A;
+}
+.hit ul li .detail {
+    position: absolute;
+    display: none;
+    left: 294px;
+    top: 0;
+    width: 100%;
+}
+.hit ul li.active .detail {
+    display: flex;
+    align-items: flex-end;
+}
+.hit ul li .detail .navi {
+    position: absolute;
+    display: flex;
+    left: 227px;
+    top: 622px;
+    width: 560px;
+    height: 68px;
+    background-color: #EDEDED;
+    align-items: center;
+    justify-content: space-around;
+}
+.hit ul li .detail .navi button {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #FFF;
+}
+.hit ul li .detail .navi button i {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+}
+.hit ul li .detail .navi span {
+    font-size: 25px;
+    font-weight: 700;
+}
+.hit ul li .detail .list ul li {
+    text-align: center;
+    width: 204px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.hit ul li .detail .list ul li h4 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.hit ul li .detail .list ul li span {
+    color: #ccc;
+}
+@media screen and (max-width:640px){
+    .hit {
+        margin: 40px 0 0 0;
+    }
+    .hit h2 {
+        margin-bottom: 40px;
+        font-size: 30px;
+    }
+    .hit .hit_wrap {
+        margin-left: 0;
+        height: 340px;
+    }
+    .hit .hit_wrap::before {
+        display: none;
+    }
+    .hit ul {
+        padding-top: 0;
+    }
+    .hit ul li {
+        margin: 0 0 0 0;
+    }
+    .hit ul li a.tit {
+        display: none;
+    }
+    .hit ul li .detail {
+        position: relative;
+        display: none;
+        left: auto;
+        top: auto;
+        width: auto;
+    }
+    .hit ul li.active .detail {
+        display: block;
+    }
+    .hit ul li .detail img {
+        width: 225px;
+        margin-left: 48px;
+    }
+    .hit ul li .detail .navi {
+        left: 9px;
+        top: 264px;
+        width: 301px;
+        height: 36px;
+    }
+    .hit ul li .detail .navi button {
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+    }
+    .hit ul li .detail .navi button i {
+        font-size: 11px;
+        line-height: 18px;
+    }
+    .hit ul li .detail .navi span {
+        font-size: 18px;
+    }
+    .hit ul li .detail .list ul li {
+        display: none;
+    }
+}
+
+.manage {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    z-index: 3;
+    background: url(../images/main/manage_bg.png) no-repeat center center / cover;
+    letter-spacing: -0.05em;
+    color: #FFF;
+}
+.manage p {
+    padding: 93px 0 0 0;
+    font-size: 60px;
+}
+.manage p span {
+    font-weight: 700;
+}
+.manage p br.m_on {
+    display: none;
+}
+@media screen and (max-width:640px){
+    .manage {
+        width: auto;
+        height: 308px;
+    }
+    .manage p {
+        padding: 72px 0 0 0;
+        font-size: 30px;
+    }
+    .manage p span {
+        font-weight: 700;
+    }
+    .manage p br.m_on {
+        display: block;
+    }
+}
+
+.event {
+    position: relative;
+    height: 835px;
+    z-index: 1;
+    background-color: #EDEDED;
+}
+.event .circle {
+    position: absolute;
+    right: -140px;
+    top: -140px;
+    z-index: 2;
+    width: 319px; 
+    height: 319px;
+    background: url(../images/main/newevent_circle.png) no-repeat right bottom;
+    animation-name: circle_rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes circle_rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+.event h2 {
+    display: none;
+}
+.event .list {
+    padding: 225px 0 0 0;
+}
+.event .list ul li a {
+    transition: 0.5s;
+}
+.event .list ul li a:hover {
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+}
+.event .list ul li a .txt {
+    position: absolute;
+    left: 0;
+    top: 326px;
+    width: 367px;
+    height: 67px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    text-align: center;
+}
+.event .list ul li a .txt p {
+    padding: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.event .list ul li a .txt p span {
+    font-size: 16px;
+    color: #B6B6B6;
+}
+.event .list .navi {
+    position: relative;
+    margin: 60px 0 0 0;
+}
+.event .list .navi button {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #FFF;
+}
+.event .list .navi button i {
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+}
+@media screen and (max-width:640px){
+    .event {
+        height: auto;
+    }
+    .event .circle {
+        display: none;
+    }
+    
+    .event h2 {
+        display: block;
+        font-size: 30px;
+        font-weight: 700;
+        padding-top: 40px;
+        text-align: center;
+    }
+    .event .list {
+        padding: 26px 0 0 0;
+    }
+    .event .list ul li a img {
+        width: 262px;
+    }
+    .event .list ul li a .txt {
+        top: 246px;
+        width: 262px;
+        height: auto;
+    }
+    .event .list ul li a .txt p {
+        padding: 6px;
+        font-size: 13px;
+    }
+    .event .list ul li a .txt p span {
+        font-size: 10px;
+    }
+    .event .list .navi {
+        position: relative;
+        margin: 60px 0 0 0;
+    }
+    .event .list .navi button {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #FFF;
+    }
+    .event .list .navi button i {
+        font-size: 18px;
+        line-height: 30px;
+        text-align: center;
+    }
+}
