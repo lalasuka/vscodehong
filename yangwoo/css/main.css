@@ -1,0 +1,20 @@
+@import url('default.css');
+@import url('common.css');
+
+.visual {
+    height: 800px;
+    background: url(../images/main/visual_bg.png) no-repeat center center / cover;
+    color: #FFF;
+}
+.visual h2 {
+    padding: 343px 0 0 0;
+    font-size: 40px;
+    text-align: center;
+}
+.visual h2 span {
+  font-weight: 700;
+}
+
+.news {
+  height: 1000px;
+}
