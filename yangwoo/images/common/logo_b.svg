@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="175.485" height="36" viewBox="0 0 175.485 36">
-  <g id="logo" transform="translate(-124.015 -17.972)">
-    <text id="양우종합건설" transform="translate(161.5 46.972)" fill="#fff" font-size="25" font-family="NotoSansKR-Bold, Noto Sans KR" font-weight="700"><tspan x="0" y="0">양우종합건설</tspan></text>
-    <g id="favicon" transform="translate(1049.015 892.542)">
+<svg xmlns="http://www.w3.org/2000/svg" width="175.985" height="36" viewBox="0 0 175.985 36">
+  <g id="logo_b" transform="translate(-124.015 -32)">
+    <text id="양우종합건설" transform="translate(162 61)" fill="#1d1d1d" font-size="25" font-family="NotoSansKR-Bold, Noto Sans KR" font-weight="700"><tspan x="0" y="0">양우종합건설</tspan></text>
+    <g id="favicon" transform="translate(1049.015 906.57)">
       <rect id="사각형_26" data-name="사각형 26" width="35" height="35" transform="translate(-924.515 -873.57)" fill="none"/>
-      <g id="logo-2" data-name="logo" transform="translate(-925 -868.453)">
+      <g id="logo" transform="translate(-925 -868.453)">
         <g id="Layer_1" data-name="Layer 1" transform="translate(0 0)">
           <path id="패스_3" data-name="패스 3" d="M28.837.284C31.674.8,33.923,2.112,34.887,4.16a5.343,5.343,0,0,1,.6,2.2v1.32c-.3,3.287-2.69,7.09-6.649,10.375V16.886C32.8,13.67,35.337,8.331,33.171,3.5c.521,6.432-1.869,10.312-4.334,12.726ZM13.072,3.062C18.752.357,24.585-.521,28.837.284V16.228a22.109,22.109,0,0,1-5,3.291,13.721,13.721,0,0,0,5-2.633V18.05a34.1,34.1,0,0,1-6.2,3.876c-9.412,4.534-19.5,3.735-22.042-1.39A5.322,5.322,0,0,1,0,18.423v-1.1C.373,12.5,5.453,6.721,13.072,3.062Z" transform="translate(0 0.003)" fill="#ec1c24"/>
           <path id="패스_4" data-name="패스 4" d="M32.966,19.958l7.56-8.31H35.062L30.8,16.589,25.705,10.9H20.09l8.085,8.983v7.783h4.791Z" transform="translate(-15.823 -8.585)" fill="#ec1c24"/>
