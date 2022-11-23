@@ -1,0 +1,224 @@
+/* 모든 페이지에 공통 들어가는 스타일 (header/footer) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+html, body {
+    color: #3D3D3D;
+    line-height: 1.4;
+    font-family: 'Noto Sans kr', 'nanumGothic', 'Malgun Gothic', 'Apple SD Gothic','Apple SD Gothic Neo', 'Dotum', sans-serif;
+    /* 폰트 적용 우선순위
+       을유 웹폰트 우선적용, - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨
+       apple sd gothic - 아이폰에서 지원하는 폰트 */
+    font-size: 16px;
+    font-weight: 400;
+    /* letter-spacing: -0.05em; */
+    word-break: keep-all; /* 단어별 줄바꿈 */
+}
+#wrap { /* id="wrap" */
+    overflow: hidden;
+    position: relative;
+    min-width: 320px;
+}
+/* 콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
+.wrapper {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+    /* 1400px 이하부터 320px까지 모든 사이즈 반응형
+        1400px 일때에도 좌우에 여백은 유지해야함 
+        (1400이상에서 1400px이하로 변경되는 점 - 반응형으로 전환되는 점)
+        부드럽게 여백을 유지하면서 전환
+        원래 좌우에 여백 20px씩 들어가 있는 걸로 스타일을 줌
+        1400px이 콘텐츠 영역인데 왼쪽 20 + 오른쪽 20 = 1440px이 넓이
+        padding으로 좌우에 여백을 20px씩 줌 */
+}
+@media screen and (max-width:1400px){
+    html, body {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:1000px){
+    html, body {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:640px){
+    /* 640px 이하의 디바이스에서만 아래 css가 적용
+      pc에서는 1280px이라는 콘텐츠 고정 넓이가 존재했지만
+      모바일에서는 디바이스 넓이에 맞춰서 꽉차게 구현
+      구현방식이 달라서 고정값을 모두 삭제 */
+    html, body {
+        font-size: 13px;
+    }
+}/* media 종료 */
+.clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}
+
+/* wrapper와 동일한 사이즈를 갖은 position:relative를 요소는
+   cnt_wrap 클래스 줌 */
+.cnt_wrap {
+    position: relative;
+}
+
+.skip_nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000000000000;
+    width: 100%;
+}
+.skip_nav a {
+    position: absolute;
+    left: 0;
+    top: -1000px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #0059A8;
+    color: #FFF;
+    text-align: center;
+}
+.skip_nav a:focus {
+    top: 0;
+}
+
+/* 브라우저에서 글자를 드래그했을때 드래그한 영역의 색과 글자색
+    -moz-, -webkit- 이 앞에 붙은 속성은 표준화 되지 않은 속성 */
+::selection{background:#EC1C24;color:#fff;}
+::-moz-selection{background:#EC1C24;color:#fff;}
+::-webkit-selection{background:#EC1C24;color:#fff;} 
+
+
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    color: #FFF;
+}
+.header h1 {
+    float: left;
+    margin: 30px 0 0 4.5%;
+    font-size: 0;
+    line-height: 0;
+}
+.header h1 a {
+    display: block;
+    width: 84px;
+    height: 40px;
+    background-image: url(../images/common/care-logo_w\ 1.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header .gnb .gnb_open {
+    display: none;
+}
+.header .gnb .gnb_list {
+    display: inline-flex;
+    justify-content: center;
+    width: 79%;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+.header .gnb .gnb_list li {
+    float: left;
+}
+.header .gnb .gnb_list li a {
+    display: block;
+    padding: 0 43px;
+    line-height: 100px;
+}
+.header .gnb .spon {
+    float: right;
+    display: block;
+    margin: 0 4.5% 0 0;
+    font-size: 20px;
+    line-height: 100px;
+    font-weight: 700;
+}
+@media screen and (max-width:1440px){
+    .header h1 {
+        margin: 30px 0 0 20px;
+    }
+    .header .gnb .gnb_list {
+        width: 82%;
+    }
+    .header .gnb .spon {
+        margin: 0 20px 0 0;
+    }
+}
+@media screen and (max-width:1200px){
+    .header h1 a {
+        width: 74px;
+        background-size: contain;
+    }
+    .header .gnb .gnb_list {
+        width: 78%;
+        font-size: 22px;
+    }
+    .header .gnb .gnb_list li {
+        float: left;
+    }
+    .header .gnb .gnb_list li a {
+        display: block;
+        padding: 0 43px;
+        line-height: 100px;
+    }
+    .header .gnb .spon {
+        float: right;
+        display: block;
+        margin: 0 4.5% 0 0;
+        font-size: 20px;
+        line-height: 100px;
+        font-weight: 700;
+    }
+}
+@media screen and (max-width:1000px){
+    .header h1 a {
+        display: block;
+        width: 60px;     
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        float: right;
+    }
+    .header .gnb .gnb_open i {
+        padding: 0 20px;
+        font-size: 20px;
+        line-height: 100px;
+    }
+    .header .gnb .gnb_open span {
+        display: none;
+    }
+    .header .gnb .gnb_list {
+        display: none;
+    }
+    .header .gnb .spon {
+        display: none;
+    }
+}
+@media screen and (max-width:800px) {
+    .header {
+        height: 70px;
+    }
+    .header h1 {
+        margin: 22px 0 0 20px;
+    }
+    .header h1 a {
+        width: 58px;     
+    }
+    .header .gnb .gnb_open i {
+        font-size: 18px;
+        line-height: 70px;
+    }
+}
+@media screen and (max-width:640px){
+    .header h1 a {
+        width: 54px;
+    }
+    .header .gnb .gnb_open i {
+        font-size: 17px;
+    }
+}
