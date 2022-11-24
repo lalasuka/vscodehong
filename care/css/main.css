@@ -77,47 +77,45 @@
     }
 }
 @media screen and (max-width:1200px){
-    .menu {
-        text-align: center;
-        margin: 120px 0;
-    }
-    .menu h2 {
-        display: none;
-    }
     .menu ul li {
-        float: left;
-        width: 320px;
-        height: 217px;
-        margin-right: 20px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 30px;
-        box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
-    }
-    .menu ul li:last-child {
-        margin-right: 0;
-    }
-    .menu ul li a {
-        display: block;
-        padding: 30px 0 0 0;
-    }
-    .menu ul li a i {
-        font-size: 40px;
-        color: #666;
-    }
-    .menu ul li a h3 {
-        padding: 18px 0;
-        color: #1d1d1d;
+        width: 23.4%;
     }
 }
-@media screen and (max-width:640px){}
+@media screen and (max-width:1000px){
+    .menu ul li {
+        width: 23%;
+    }
+    .menu ul li a p .no {
+        display: none;
+    }
+}
+@media screen and (max-width:800px){
+    .menu {
+        margin: 60px 0;
+    }
+    .menu ul li {
+        width: 22.5%;
+        height: 90px;
+    }
+    .menu ul li a {
+        padding: 20px 0 0 0;
+    }
+    .menu ul li a i {
+        font-size: 30px;
+    }
+    .menu ul li a h3 {
+        padding: 5px 0;
+        color: #1d1d1d;
+    }
+    .menu ul li a p {
+        display: none;
+    }
+}
 @media screen and (max-width:640px){
     .menu {
-        width: 100%;
         margin: 40px 0;
     }
     .menu ul li {
-        float: left;
         width: calc(50% - 8px);
         height: 90px;
         margin-right: 16px;
@@ -128,21 +126,6 @@
     .menu ul li:nth-child(4) {
         float: right;
         margin: 0;
-    }
-    .menu ul li a {
-        display: block;
-        padding: 20px 0 0 0;
-    }
-    .menu ul li a i {
-        font-size: 30px;
-        color: #666;
-    }
-    .menu ul li a h3 {
-        padding: 5px 0 0 0;
-        color: #1d1d1d;
-    }
-    .menu ul li a p {
-        display: none;
     }
 }
 
@@ -159,18 +142,605 @@
 .banner p {
     font-size: 20px;
 }
-@media screen and (max-width:640px){
+@media screen and (max-width:1440px){
     .banner {
-        padding: 126px 0 154px 80px;
-        background: url(../images/main/banner_bg.png) no-repeat center center / cover;
-        color: #fff;
+        padding: 116px 0 134px 20px;
     }
     .banner h2 {
-        padding: 0 0 10px 0;
-        font-size: 60px;
-        font-weight: 700;
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:1200px){
+    .banner {
+        padding: 100px 0 118px 20px;
     }
     .banner p {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width:1000px){
+    .banner {
+        padding: 84px 0 90px 20px;
+    }
+    .banner h2 {
+        font-size: 40px;
+    }
+    .banner p {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:800px){
+    .banner {
+        padding: 75px 0 75px 20px;
+    }
+    .banner h2 {
+        font-size: 35px;
+    }
+    .banner p {
+        display: none;
+    }
+}
+@media screen and (max-width:640px){
+    .banner {
+        padding: 65px 0 65px 20px;
+    }
+    .banner h2 {
+        font-size: 30px;
+    }
+}
+
+.camp {
+    margin: 120px 0;
+}
+.camp h2 {
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    color: #1d1d1d;
+}
+.camp .camp_list {
+    position: relative;
+    display: block;
+    padding: 37px 0 0 0;
+}
+.camp .camp_list ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 94%;
+    margin: 0 40px;
+}
+.camp .camp_list ul li a .pic {
+    width: 57%;
+    overflow: hidden;
+    border-radius: 60px;
+}
+.camp .camp_list ul li a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.camp .camp_list ul li a .txt {
+    position: relative;
+    width: 43%;
+    margin-left: 48px;
+}
+.camp .camp_list ul li a .txt h3 {
+    margin-bottom: 38px;
+    width: 512px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.camp .camp_list ul li a .txt p {
+    display: block;
+    width: 512px;
+    overflow: hidden;
+    line-height: 1.6;
+    height: 9.6em;
+}
+.camp .camp_list ul li a .txt::before {
+    position: absolute;
+    left: -8px;
+    top: -14%;
+    width: 520px;
+    height: 8px;
+    background-color: #ccc;
+    content: "";
+}
+.camp .camp_list ul li a .txt::after {
+    position: absolute;
+    left: -8px;
+    bottom: -14%;
+    width: 520px;
+    height: 8px;
+    background-color: #ccc;
+    content: "";
+}
+.camp .camp_list .pagin_group button {
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 27px);
+    color: #666;
+}
+.camp .camp_list .pagin_group button.prev {
+    left: 0;
+}
+.camp .camp_list .pagin_group button.next {
+    right: 0;
+}
+.camp .camp_list .pagin_group button i {
+    font-size: 50px;
+}
+.camp .camp_list .pagin_group button span {
+    display: none;
+}
+.camp .camp_list .pagin_group .pagin {
+    margin-top: 30px;
+    text-align: center;
+}
+.camp .camp_list .pagin_group .pagin span {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+.camp .pagin_group .pagin span:last-child {
+    margin-right: 0;
+}
+@media screen and (max-width:1440px){
+    .camp {
+        margin: 80px 0;
+    }
+    .camp .camp_list ul li a {
+        width: 94%;
+        margin: 0 20px;
+    }
+    .camp .camp_list ul li a .pic {
+        width: 47%;
+    }
+    .camp .camp_list ul li a .txt {
+        width: 37%;
+    }
+    .camp .camp_list ul li a .txt h3 {
+        width: auto;
+    }
+    .camp .camp_list ul li a .txt p {
+        width: auto;
+    }
+    .camp .camp_list ul li a .txt::before {
+        left: -8px;
+        top: -8%;
+        width: 110%;
+    }
+    .camp .camp_list ul li a .txt::after {
+        left: -8px;
+        bottom: -8%;
+        width: 110%;
+    }
+}
+@media screen and (max-width:1200px){
+    .camp {
+        margin: 50px 0;
+    }
+    .camp h2 {
+        font-size: 50px;
+    }
+    .camp .camp_list ul li a {
+        width: 95%;
+    }
+    .camp .camp_list ul li a .pic {
+        width: 48%;
+    }
+    .camp .camp_list ul li a .txt {
+        width: 36%;
+        margin-left: 20px;
+    }
+    .camp .camp_list .pagin_group button i {
+        font-size: 40px;
+    }
+    .camp .camp_list .pagin_group .pagin span {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media screen and (max-width:1000px){
+    .camp h2 {
+        font-size: 45px;
+    }
+    .camp .camp_list ul li a .txt h3 {
+        font-size: 27px;
+    }
+    .camp .camp_list .pagin_group button i {
+        font-size: 35px;
+    }
+}
+@media screen and (max-width:800px){
+    .camp .camp_list ul li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .camp .camp_list ul li a .pic {
+        width: 75%;
+        border-radius: 40px;
+    }
+    .camp .camp_list ul li a .txt {
+        width: 80%;
+        margin-left: 0;
+        text-align: center;
+    }
+    .camp .camp_list ul li a .txt h3 {
+        margin: 15px 0 0 0;
+        font-size: 23px;
+    }
+    .camp .camp_list ul li a .txt p {
+        display: none;
+    }
+    .camp .camp_list ul li a .txt::before,
+    .camp .camp_list ul li a .txt::after {
+        display: none;
+    }
+    .camp .camp_list .pagin_group .pagin span {
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width:640px){
+    .camp h2 {
+        font-size: 30px;
+    }
+    .camp .camp_list ul li a {
+        width: 90%;
+    }
+    .camp .camp_list ul li a .pic {
+        width: 90%;
+        border-radius: 20px;
+    }
+    .camp .camp_list ul li a .txt {
+        width: 90%;
+    }
+    .camp .camp_list ul li a .txt h3 {
+        margin: 10px 0 0 0;
+        font-size: 18px;
+    }
+    .camp .camp_list .pagin_group button i {
+        font-size: 25px;
+    }
+    .camp .camp_list .pagin_group .pagin {
+        margin-top: 15px;
+    }
+    .camp .camp_list .pagin_group .pagin span {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.family h2 {
+    float: left;
+    margin-left: 126px;
+    margin-bottom: 51px;
+    font-size: 60px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.family .family_list ul li {
+    position: relative;
+    float: left;
+    width: 46%;
+    margin-bottom: 160px;
+    padding: 0 0 44px 0;
+    background-color: #2861BC;
+    border-radius: 60px;
+    color: #fff;
+}
+.family .family_list ul li:nth-child(1),
+.family .family_list ul li:nth-child(3) {
+    float: right;
+}
+.family .family_list ul li::after {
+    position: absolute;
+    left: 0;
+    top: 114%;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    content: "";
+}
+.family .family_list ul li a {
+    display: block;
+}
+.family .family_list ul li a .pic {
+    width: 100%;
+    border-radius: 60px 60px 0 0;
+    overflow: hidden;
+}
+.family .family_list ul li a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.family .family_list ul li a .tit {
+    padding: 0 35px 18px 35px;
+}
+.family .family_list ul li a .tit h3 {
+    float: left;
+    padding: 20px 12px 0 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.family .family_list ul li a .tit .date {
+    float: left;
+    padding-top: 40px;
+}
+.family .family_list ul li a .tit .more_s {
+    float: right;
+    padding: 38px 0 0 0;
+}
+.family .family_list ul li a .tit .more_s i {
+    font-size: 25px;
+}
+.family .family_list ul li a .txt {
+    float: left;
+    overflow: hidden;
+    padding: 0 35px;
+    line-height: 1.5;
+    height: 6em;
+    font-size: 20px;
+}
+.family .family_list ul li a .txt p {
+    display: block;
+    width: 100%;
+}
+.family .more_p {
+    position: absolute;
+    left: 390px;
+    top: 194px;
+    display: inline-flex;
+    padding: 6px 23px;
+    align-items: center;
+    background-color: #2861BC;
+    border-radius: 10px;
+    color: #fff;
+}
+.family .more_p span {
+    font-size: 20px;
+    padding-right: 7px;
+}
+.family .more_p i {
+    font-size: 22px;
+}
+
+@media screen and (max-width:1440px){
+    .family .family_list ul li {
+        padding-bottom: 40px;
+    }
+}
+@media screen and (max-width:1200px){
+    .family h2 {
+        margin-left: 100px;
+        font-size: 50px;
+    }
+    .family .more_p {
+        left: 320px;
+        top: 160px;
+        padding: 6px 18px;
+    }
+    .family .more_p i {
+        font-size: 22px;
+    }
+    .family .family_list ul li {
+        padding-bottom: 36px;
+    }
+    .family .family_list ul li a .txt {
+        line-height: 1.5;
+        height: 4.5em;
+    }
+}
+@media screen and (max-width:1000px){
+    .family h2 {
+        margin-left: 60px;
+        font-size: 45px;
+    }
+    .family .more_p {
+        left: 250px;
+        top: 140px;
+    }
+    .family .family_list ul li a .txt {
+        line-height: 1.5;
+        height: 3em;
+    }
+}
+@media screen and (max-width:800px){
+    .family h2 {
+        float: none;
+        margin-left: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .family h2 .m_no {
+        display: none;
+    }
+    .family .family_list ul li {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .family .family_list ul li:nth-child(1),
+    .family .family_list ul li:nth-child(3) {
+        float: none;
+    }
+    .family .family_list ul li::after {
+        display: none;
+    }
+    .family .family_list ul li a .tit {
+        float: none;
+        padding: 0 10px 10px 15px;
+    }
+    .family .family_list ul li a .txt {
+        float: none;
+        padding: 0 10px 0 15px;
+    }
+    .family .more_p {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        margin-left: calc(50% - 48px);
+    }
+}
+@media screen and (max-width:640px){
+    .family h2 {
+        font-size: 30px;
+    }
+    .family .family_list ul li a .txt {
+        font-size: 15px;
+    }
+    .family .family_list ul li a .tit h3 {
+        padding: 10px 5px 0 0;
+        font-size: 18px;
+    }
+    .family .family_list ul li a .tit .date {
+        padding-top: 16px;
+    }
+    .family .family_list ul li a .tit .more_s {
+        padding: 21px 0 0 0;
+    }
+    .family .family_list ul li a .tit .more_s i {
+        font-size: 15px;
+    }
+    .family .more_p span {
+        font-size: 15px;
+        padding-right: 5px;
+    }
+    .family .more_p i {
+        font-size: 15px;
+    }
+}
+
+.support {
+    display: flex;
+    height: 400px;
+    color: #fff;
+}
+.support .spon {
+    width: 50%;
+    padding: 84px 0 0 59px;
+    background: url(../images/main/support01_bg.png) no-repeat center center / cover;
+}
+.support .spon h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+.support .spon .temp {
+    float: left;
+    margin: 35px 15px 0 0;
+}
+.support .spon .temp a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3C5F27;
+    padding: 10px 11px;
+    border-radius: 10px;
+}
+.support .spon .temp a span {
+    margin-right: 10px;
+}
+.support .spon .regul {
+    float: left;
+    margin: 35px 0 0 0;
+}
+.support .spon .regul a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3D8246;
+    padding: 10px 11px;
+    border-radius: 10px;
+}
+.support .spon .regul a span {
+    margin-right: 30px;
+}
+.support .adopt {
+    width: 50%;
+    padding: 84px 0 0 59px;
+    background: url(../images/main/support02_bg.png) no-repeat center center / cover;
+}
+.support .adopt h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+.support .adopt .regul {
+    margin-top: 35px;
+}
+.support .adopt .regul a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1C488F;
+    padding: 10px 11px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:1440px){
+    .support .spon h2 {
+        font-size: 32px;
+    }
+    .support .adopt h2 {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width:1200px){
+    .support .spon h2 {
+        font-size: 28px;
+    }
+    .support .adopt h2 {
+        font-size: 28px;
+    }
+}
+@media screen and (max-width:1000px){
+    .support .spon h2 {
+        font-size: 24px;
+    }
+    .support .spon .temp {
+        float: none;
+        margin: 20px 0 0 0;
+    }
+    .support .spon .regul {
+        float: none;
+        margin: 10px 0 0 0;
+    }
+    .support .adopt h2 {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width:800px){
+    .support .spon h2 {
         font-size: 20px;
-    }   
+    }
+    .support .adopt h2 {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:640px){
+    .support {
+        display: block;
+        height: auto;
+        color: #fff;
+    }
+    .support .spon {
+        width: 100%;
+        padding: 16px 0 0 23px;
+    }
+    .support .spon h2 {
+        font-size: 16px;
+    }
+    .support .adopt {
+        width: 100%;
+        padding: 16px 0 0 23px;
+    }
+    .support .adopt h2 {
+        font-size: 16px;
+    }
 }
