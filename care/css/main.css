@@ -744,3 +744,196 @@
         font-size: 16px;
     }
 }
+.notice {
+    margin: 120px 0;
+}
+.notice h2 {
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.notice .more_n {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 23px;
+    margin-left: 20px;
+    background-color: #2861BC;
+    border-radius: 10px;
+    color: #fff;
+}
+.notice .more_n span {
+    font-size: 20px;
+}
+.notice .more_n i {
+    font-size: 16px;
+    margin-left: 7px;
+}
+.notice .notice_list ul li {
+    border-radius: 40px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+.notice .notice_list ul li a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 40px 40px 0 0;
+}
+.notice .notice_list ul li a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.notice .notice_list ul li h3 {
+    padding: 25px 0 14px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.notice .notice_list ul li p {
+    padding: 0 20px;
+    overflow: hidden;
+    line-height: 1.5;
+    height: 6em;
+}
+.notice .notice_list ul li span {
+    display: inline-block;
+    padding: 12px 0 43px 20px;
+}
+.notice .notice_list ul li button {
+    float: right;
+    padding: 12px 20px 0 0;
+}
+.notice .pagin_list button {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+}
+.notice .pagin_list button.prev {
+    left: -10px;
+}
+.notice .pagin_list button.next {
+    right: -20px;
+}
+.notice .pagin_list button i {
+    font-size: 50px;
+}
+.notice .pagin_list .pagin {
+    text-align: center;
+    margin-top: 50px;
+}
+.notice .pagin_list .pagin span {
+    width: 25px;
+    height: 25px;
+}
+@media screen and (max-width:1440px){
+    .notice {
+        margin: 80px 0;
+    }
+    .notice .pagin_list .pagin span {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media screen and (max-width:1200px){
+    .notice h2 {
+        margin-bottom: 30px;
+        font-size: 50px;
+    }
+    .notice .notice_list ul li h3 {
+        padding: 20px 0 14px 18px;
+        font-size: 20px;
+    }
+    .notice .notice_list ul li p {
+        padding: 0 18px;
+        line-height: 1.5;
+        height: 4.5em;
+    }
+    .notice .pagin_list .pagin span {
+        width: 18px;
+        height: 18px;
+    }
+    .notice .pagin_list button i {
+        font-size: 40px;
+    }
+    .notice .pagin_list .pagin {
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width:1000px){
+    .notice h2 {
+        margin-bottom: 20px;
+    }
+    .notice .notice_list ul li h3 {
+        padding: 18px 0 14px 16px;
+        font-size: 18px;
+    }
+    .notice .notice_list ul li p {
+        padding: 0 16px;
+    }
+    .notice .pagin_list button i {
+        font-size: 35px;
+    }
+    .notice .pagin_list button.prev {
+        left: 0;
+    }
+    .notice .pagin_list button.next {
+        right: -5px;
+    }
+    .notice .pagin_list .pagin {
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width:800px){
+    .notice h2 {
+        font-size: 40px;
+    }
+    .notice .notice_list ul li p {
+        line-height: 1.5;
+        height: 3em;
+    }
+    .notice .pagin_list .pagin span {
+        width: 15px;
+        height: 15px;
+    }
+    .notice .pagin_list button i {
+        font-size: 30px;
+    }
+    .notice .pagin_list .pagin {
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:640px){
+    .notice .tit {
+        position: relative;
+    }
+    .notice h2 {
+        font-size: 30px;
+        margin-left: calc(50% - 66px);
+    }
+    .notice .more_n {
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .notice .more_n span {
+        display: none;
+    }
+    .notice .more_n i {
+        margin-left: 0;
+    }
+    .notice .notice_list ul li h3 {
+        padding: 15px 0 12px 10px;
+        font-size: 15px;
+    }
+    .notice .notice_list ul li p {
+        padding: 0 10px;
+    }
+    .notice .pagin_list button i {
+        font-size: 25px;
+    }
+}
